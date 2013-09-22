@@ -25,11 +25,23 @@ class minecraft(
   $heap_start    = 512,
 )
 {
+  python::pip { 'mark2':
+    ensure => present
+  }
+
   file { "${homedir}/spigot.jar":
     ensure  => file,
     source  => 'puppet:///modules/minecraft/spigot.jar',
     owner   => $user
   }
+
+  file { "${homedir}/mark2.properties":
+    ensure => file,
+    owner  => $user,
+    group  => $group,
+    source => 'file:///usr/local/lib/python2.7/dist-packages/mk2/resources/mark2.default.properties',
+    mode   => '0644',
+  } -> Minecraft::Mark2_Prop<| |>
 
   file { "${homedir}/server.properties":
     ensure => present,
@@ -43,7 +55,19 @@ class minecraft(
     owner  => $user,
     group  => $group,
     mode   => '0664',
-  } -> Minecraft::Op<| |>
+  }
+
+  file { "${homedir}/permissions.yml":
+    ensure  => file,
+    owner   => $user,
+    group   => $group,
+    mode    => '0644',
+    source  => 'puppet:///modules/minecraft/permissions.yml',
+    require => File["${homedir}/ops.txt"],
+  }
+
+  File["${homedir}/permissions.yml"] -> Minecraft::Op<| |>
+  File["${homedir}/permissions.yml"] -> Minecraft::Mod<| |>
 
   file { "${homedir}/banned-players.txt":
     ensure => present,
@@ -72,12 +96,18 @@ class minecraft(
     group   => 'root',
     mode    => '0744',
     content => template('minecraft/minecraft_init.erb'),
+    require => Python::Pip['mark2']
   }
 
   service { 'minecraft':
     ensure    => running,
     require   => File['/etc/init.d/minecraft'],
     subscribe => File["${homedir}/spigot.jar"],
+  }
+
+  minecraft::mark2_prop {
+    'mark2.jar-path':
+        value => 'spigot.jar';
   }
 }
 

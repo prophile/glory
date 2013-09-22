@@ -38,7 +38,7 @@ node default {
             user => 'minecraft',
             group => 'minecraft',
             homedir => '/home/minecraft',
-            require => [User['minecraft'], Package['screen'], Python::Pip['mark2']]
+            require => [User['minecraft'], Package['screen']]
             }
 
     class { 'python':
@@ -46,18 +46,27 @@ node default {
             dev => true
         }
 
-    python::pip { 'mark2':
-        ensure => present,
-    }
-
     minecraft::op {
         'adminphile':;
         'nfreader': }
+    minecraft::mod {
+        'mrxak':;
+        'mud212':;
+        'mackilroy':;
+        'Meowx':;
+        'prophile':;
+    }
     minecraft::server_prop {
         'difficulty':
             value => 2;
         'motd':
-            value => 'I like toast';
+            value => 'I like toast'; }
+
+    minecraft::mark2_prop {
+        'java.cli.X.ms':
+            value => '3400M';
+        'java.cli.X.mx':
+            value => '3400M';
     }
 
     include secrets
