@@ -40,20 +40,15 @@ node default {
             }
 
     minecraft::op {
-        'adminphile':
-            require => Class['minecraft'];
-        'nfreader':
-            require => Class['minecraft']; }
+        'adminphile':;
+        'nfreader': }
     minecraft::server_prop {
         'difficulty':
-            value => 2,
-            require => Class['minecraft'];
+            value => 2;
         'level-seed':
-            value => "eyes",
-            require => Class['minecraft'];
+            value => "eyes";
         'motd':
-            value => 'I like toast',
-            require => Class['minecraft'];
+            value => 'I like toast';
     }
 }
 
