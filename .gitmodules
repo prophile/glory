@@ -1,0 +1,9 @@
+[submodule "modules/java7"]
+	path = modules/java7
+	url = http://github.com/softek/puppet-java7.git
+[submodule "modules/apt"]
+	path = modules/apt
+	url = https://github.com/puppetlabs/puppetlabs-apt
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib
