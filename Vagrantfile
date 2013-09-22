@@ -9,6 +9,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "forwarded_port", guest: 25565, host: 25565
 
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--memory", 4096]
+  end
+
   config.vm.host_name = "glory"
 
   config.vm.provision "puppet" do |puppet|
