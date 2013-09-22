@@ -45,10 +45,10 @@ node default {
     minecraft::server_prop {
         'difficulty':
             value => 2;
-        'level-seed':
-            value => "eyes";
         'motd':
             value => 'I like toast';
     }
+
+    include secrets
 }
 
