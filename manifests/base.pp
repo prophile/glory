@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 node default {
-    include java7
+    require java7
 
     exec { 'apt-update':
            command => '/usr/bin/apt-get update' }
