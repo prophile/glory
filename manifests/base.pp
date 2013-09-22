@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Exec { path => ["/bin/", "/sbin/", "/usr/bin/", "/usr/sbin/"] }
+
 node default {
     require java7
 
@@ -36,8 +38,17 @@ node default {
             user => 'minecraft',
             group => 'minecraft',
             homedir => '/home/minecraft',
-            require => [User['minecraft'], Package['screen']]
+            require => [User['minecraft'], Package['screen'], Python::Pip['mark2']]
             }
+
+    class { 'python':
+            pip => true,
+            dev => true
+        }
+
+    python::pip { 'mark2':
+        ensure => present,
+    }
 
     minecraft::op {
         'adminphile':;
