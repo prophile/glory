@@ -25,14 +25,9 @@ class minecraft(
   $heap_start    = 512,
 )
 {
-  exec { "get-mc-server":
-    command => '/usr/bin/curl "http://ci.md-5.net/job/Spigot/lastStableBuild/artifact/Spigot-Server/target/spigot.jar" -o /home/minecraft/spigot.jar',
-    creates => "${homedir}/spigot.jar"
-  }
-
   file { "${homedir}/spigot.jar":
-    require => Exec['get-mc-server'],
     ensure  => file,
+    source  => 'puppet:///modules/minecraft/spigot.jar',
     owner   => $user
   }
 
