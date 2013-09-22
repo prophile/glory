@@ -31,6 +31,13 @@ class minecraft(
     owner   => $user
   }
 
+  file { "${homedir}/server.properties":
+    ensure => present,
+    owner  => $user,
+    group  => $group,
+    mode   => '0664',
+  } -> Minecraft::Server_Prop<| |>
+
   file { "${homedir}/ops.txt":
     ensure => present,
     owner  => $user,
