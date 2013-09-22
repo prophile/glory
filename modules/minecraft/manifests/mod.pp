@@ -6,7 +6,7 @@ define minecraft::mod ()
 {
   file_line { "${name}/perms":
     path   => "${minecraft::homedir}/permissions.yml",
-    line   => "  ${name}: {group:'mod', permissions:''}",
+    line   => "  ${name}: {'group':'mod', 'permissions':''}",
     match  => "  ${name}:.*",
     notify => Service['minecraft'],
   }

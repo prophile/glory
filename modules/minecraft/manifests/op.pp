@@ -12,7 +12,7 @@ define minecraft::op ()
 
   file_line { "${name}/perms":
     path   => "${minecraft::homedir}/permissions.yml",
-    line   => "  ${name}: {group:'admin', permissions:''}",
+    line   => "  ${name}: {'group':'admin', 'permissions':''}",
     match  => "  ${name}:.*",
     notify => Service['minecraft'],
   }

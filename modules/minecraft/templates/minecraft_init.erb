@@ -14,11 +14,8 @@
   ### END INIT INFO
 
 #Settings
-SERVICE='spigot.jar'
 USERNAME="<%= @user %>"
 MCPATH="<%= @homedir %>"
-MAX_HEAP="<%= @heap_size %>"
-MIN_HEAP="<%= @heap_start %>"
 
 ME=`whoami`
 as_user() {
@@ -30,41 +27,11 @@ as_user() {
 }
 
 mc_start() {
-  if ps ax | grep -v grep | grep -v -i SCREEN | grep $SERVICE > /dev/null
-  then
-    echo "Tried to start but $SERVICE was already running!"
-  else
-    echo "$SERVICE was not running... starting."
-    cd $MCPATH
-    as_user "cd $MCPATH && screen -dmS minecraft-srv java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar spigot.jar nogui"
-    sleep 7
-    if ps ax | grep -v grep | grep -v -i SCREEN | grep $SERVICE > /dev/null
-    then
-      echo "$SERVICE is now running."
-    else
-      echo "Could not start $SERVICE."
-    fi
-  fi
+  as_user "cd $MCPATH && mark2 start"
 }
 
 mc_stop() {
-        if ps ax | grep -v grep | grep -v -i SCREEN | grep $SERVICE > /dev/null
-        then
-                echo "$SERVICE is running... stopping."
-              as_user "screen -p 0 -S minecraft-srv -X eval 'stuff \"say SERVER SHUTTING DOWN IN 10 SECONDS. Saving map...\"\015'"
-                as_user "screen -p 0 -S minecraft-srv -X eval 'stuff \"save-all\"\015'"
-                sleep 10
-                as_user "screen -p 0 -S minecraft-srv -X eval 'stuff \"stop\"\015'"
-                sleep 7
-        else
-                echo "$SERVICE was not running."
-        fi
-        if ps ax | grep -v grep | grep -v -i SCREEN | grep $SERVICE > /dev/null
-        then
-                echo "$SERVICE could not be shut down... still running."
-        else
-                echo "$SERVICE is shut down."
-        fi
+  as_user "cd $MCPATH && mark2 stop"
 }
 
 #Start-Stop here
@@ -80,11 +47,11 @@ case "$1" in
     mc_start
     ;;
   status)
-    if ps ax | grep -v grep | grep -v -i SCREEN | grep $SERVICE > /dev/null
+    if ps ax | grep -v grep | grep -v -i java | grep spigot.jar > /dev/null
     then
-      echo "$SERVICE is running."
+      echo "Minecraft is running."
     else
-      echo "$SERVICE is not running."
+      echo "Minecraft is not running."
       exit 1
     fi
     ;;

@@ -43,6 +43,14 @@ class minecraft(
     mode   => '0644',
   } -> Minecraft::Mark2_Prop<| |>
 
+  file { "/etc/mark2/mark2.properties":
+    ensure => file,
+    owner  => $user,
+    group  => $group,
+    source => 'file:///usr/local/lib/python2.7/dist-packages/mk2/resources/mark2.default.properties',
+    mode   => '0644',
+  }
+
   file { "${homedir}/server.properties":
     ensure => present,
     owner  => $user,
@@ -96,7 +104,7 @@ class minecraft(
     group   => 'root',
     mode    => '0744',
     content => template('minecraft/minecraft_init.erb'),
-    require => Python::Pip['mark2']
+    require => [Python::Pip['mark2'], File['/etc/mark2/mark2.properties']]
   }
 
   service { 'minecraft':
