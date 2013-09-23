@@ -1,0 +1,37 @@
+---
+plugin:
+  permissions:
+    system: 'default'
+    copies: ''
+groups:
+  admin:
+    default: false
+    info:
+      prefix: ''
+      suffix: ''
+      build: true
+    inheritance: ''
+    permissions:
+     - '*'
+  mod:
+    default: false
+    info:
+      prefix: ''
+      suffix: ''
+      build: true
+    inheritance: 'user'
+    permissions:
+     - 'essentials.tphere'
+  user:
+    default: true
+    info:
+      prefix: ''
+      suffix: ''
+      build: true
+    inheritance: ''
+    permissions:
+     - 'essentials.help'
+     - 'essentials.rules'
+     - 'essentials.motd'
+users:
+
