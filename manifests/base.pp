@@ -46,22 +46,6 @@ node default {
             dev => true
         }
 
-    minecraft::op {
-        'adminphile':;
-        'nfreader': }
-    minecraft::mod {
-        'mrxak':;
-        'mud212':;
-        'mackilroy':;
-        'Meowx':;
-        'prophile':;
-    }
-    minecraft::server_prop {
-        'difficulty':
-            value => 2;
-        'motd':
-            value => 'I like toast'; }
-
     minecraft::mark2_prop {
         'java.cli.X.ms':
             value => '3400M';
