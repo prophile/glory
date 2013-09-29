@@ -35,7 +35,8 @@ node default {
             ensure => present }
 
     class { 'mysql::server':
-            root_password => 'cupboard'
+            root_password => 'cupboard',
+            require => Exec['apt-update']
     }
 
     class { 'minecraft':
