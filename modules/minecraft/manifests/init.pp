@@ -45,11 +45,12 @@ class minecraft(
   } -> Minecraft::Mark2_Prop<| |>
 
   file { "/etc/mark2/mark2.properties":
-    ensure => file,
-    owner  => $user,
-    group  => $group,
-    source => 'file:///usr/local/lib/python2.7/dist-packages/mk2/resources/mark2.default.properties',
-    mode   => '0644',
+    ensure  => file,
+    owner   => $user,
+    group   => $group,
+    require => Python::Pip['mark2'],
+    source  => 'file:///usr/local/lib/python2.7/dist-packages/mk2/resources/mark2.default.properties',
+    mode    => '0644',
   }
 
   file { "${homedir}/server.properties":
