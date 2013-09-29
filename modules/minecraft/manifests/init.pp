@@ -23,8 +23,8 @@ class minecraft(
   $homedir       = '/opt/minecraft',
   $heap_size     = 2048,
   $heap_start    = 512,
-)
-{
+) {
+
   python::pip { 'mark2':
     ensure => present
   }
@@ -78,6 +78,14 @@ class minecraft(
 
   File["${homedir}/permissions.yml"] -> Minecraft::Op<| |>
   File["${homedir}/permissions.yml"] -> Minecraft::Mod<| |>
+
+
+  file { "${homedir}/plugins":
+    ensure => directory,
+    owner  => $user,
+    group  => $group,
+    mode   => '0755',
+  } -> Minecraft::Plugin<| |>
 
   file { "${homedir}/banned-players.txt":
     ensure => present,
