@@ -10,3 +10,6 @@
 [submodule "modules/python"]
 	path = modules/python
 	url = http://github.com/stankevich/puppet-python.git
+[submodule "modules/mysql"]
+	path = modules/mysql
+	url = http://github.com/puppetlabs/puppetlabs-mysql

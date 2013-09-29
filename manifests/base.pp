@@ -34,6 +34,10 @@ node default {
             gid => 'minecraft',
             ensure => present }
 
+    class { 'mysql::server':
+            root_password => 'cupboard'
+    }
+
     class { 'minecraft':
             user => 'minecraft',
             group => 'minecraft',
