@@ -17,4 +17,8 @@ pushd modules/worldedit/files
 wget --timestamping 'http://dev.bukkit.org/media/files/739/932/worldedit-5.5.8.zip'
 unzip -u worldedit-5.5.8.zip
 popd
+mkdir -p modules/prism/files
+pushd modules/prism/files
+wget --timestamping 'http://dev.bukkit.org/media/files/741/873/Prism-v1.6.6.jar'
+popd
 
