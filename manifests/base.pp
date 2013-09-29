@@ -56,5 +56,6 @@ node default {
     include secrets
 
     class {'essentials': }
+    class {'worldedit': }
 }
 
