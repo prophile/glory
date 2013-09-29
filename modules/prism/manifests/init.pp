@@ -3,13 +3,12 @@ class prism {
     user     => 'prism',
     password => 'cupboard',
     host     => 'localhost',
-    grant    => ['all']
+    grant    => ['all'],
   }
 
   minecraft::plugin {"Prism":
     source  => "puppet:///modules/prism/Prism-v1.6.6.jar",
     require => [MySQL::DB['prism_logs'],
-                Class['mysql::server'],
                 File["${minecraft::homedir}/plugins/Prism/config.yml"]]
   }
 
