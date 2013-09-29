@@ -54,5 +54,7 @@ node default {
     }
 
     include secrets
+
+    class {'essentials': }
 }
 
