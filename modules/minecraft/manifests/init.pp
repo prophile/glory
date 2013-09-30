@@ -108,24 +108,39 @@ class minecraft(
     mode   => '0664',
   } -> Minecraft::Whitelist<| |>
 
+  file { "${homedir}/scripts.txt":
+    ensure => present,
+    owner  => $user,
+    group  => $group,
+    mode   => '0644',
+    source => 'puppet:///modules/minecraft/scripts.txt'
+  }
+
   file { '/etc/init.d/minecraft':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0744',
     content => template('minecraft/minecraft_init.erb'),
-    require => [Python::Pip['mark2'], File['/etc/mark2/mark2.properties']]
+    require => [Python::Pip['mark2'],
+                File['/etc/mark2/mark2.properties']]
   }
 
   service { 'minecraft':
     ensure    => running,
     require   => File['/etc/init.d/minecraft'],
-    subscribe => File["${homedir}/spigot.jar"],
+    subscribe => [File["${homedir}/spigot.jar"],
+                  File["${homedir}/scripts.txt"]],
   }
 
   minecraft::mark2_prop {
     'mark2.jar-path':
         value => 'spigot.jar';
+  }
+
+  minecraft::mark2_prop {
+    'plugin.script.path':
+        value => "${homedir}/scripts.txt";
   }
 }
 

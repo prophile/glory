@@ -1,0 +1,4 @@
+*/5 * * * * ~save 1m
+38 * * * * ~backup
+@serverstopped ~backup
+
