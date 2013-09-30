@@ -8,4 +8,5 @@
 - Move the minecraft user stuff to the minecraft module
 - Refactor the prepare script to do per-module bits
 - Port to Ubuntu
+- Add world boundary mod
 
