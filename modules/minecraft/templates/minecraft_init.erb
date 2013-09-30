@@ -47,7 +47,7 @@ case "$1" in
     mc_start
     ;;
   status)
-    if ps ax | grep -v grep | grep -v -i java | grep spigot.jar > /dev/null
+    if ps ax | grep -v grep | grep spigot > /dev/null
     then
       echo "Minecraft is running."
     else
