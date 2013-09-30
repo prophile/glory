@@ -2,7 +2,7 @@
 - Add rules.txt file
 - Fix moderator permissions
 - De-spam the messages on connection
-- Disable opening nether portals
+- Disable opening nether portals, maybe using Nethrar
 - Implement the backup system
 - Implement a better puppet module for managing permissions
 - Move the minecraft user stuff to the minecraft module
