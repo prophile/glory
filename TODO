@@ -1,5 +1,4 @@
 - Add WorldGuard
-- Remove /back accessibility
 - Remove some messages
 - Implement the backup system
 - Implement a better puppet module for managing permissions
