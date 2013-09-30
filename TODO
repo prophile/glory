@@ -2,8 +2,6 @@
 - Remove /back accessibility
 - Remove some messages
 - Implement the backup system
-- Move the MySQL root password to secrets
-- Move the Prism MySQL password to secrets
 - Implement a better puppet module for managing permissions
 - Remove the manual apt-update and use the one from the apt module
 - Move the minecraft user stuff to the minecraft module
