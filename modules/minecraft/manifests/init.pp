@@ -127,10 +127,11 @@ class minecraft(
   }
 
   service { 'minecraft':
-    ensure    => running,
-    require   => File['/etc/init.d/minecraft'],
-    subscribe => [File["${homedir}/spigot.jar"],
-                  File["${homedir}/scripts.txt"]],
+    ensure     => running,
+    hasrestart => true,
+    require    => File['/etc/init.d/minecraft'],
+    subscribe  => [File["${homedir}/spigot.jar"],
+                   File["${homedir}/scripts.txt"]],
   }
 
   minecraft::mark2_prop {
