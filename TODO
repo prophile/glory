@@ -1,5 +1,7 @@
 - Add WorldGuard
-- Remove some messages
+- Add rules.txt file
+- De-spam the messages on connection
+- Disable opening nether portals
 - Implement the backup system
 - Implement a better puppet module for managing permissions
 - Move the minecraft user stuff to the minecraft module
