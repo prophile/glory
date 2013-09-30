@@ -1,7 +1,7 @@
 class prism {
   mysql::db { 'prism_logs':
     user     => 'prism',
-    password => 'cupboard',
+    password => $secrets::prism_password,
     host     => 'localhost',
     grant    => ['all'],
   }
@@ -26,7 +26,7 @@ class prism {
     owner   => $minecraft::user,
     group   => $minecraft::group,
     mode    => '0644',
-    source  => 'puppet:///modules/prism/config.yml'
+    content => template('prism/config.yml.erb')
   }
 }
 
