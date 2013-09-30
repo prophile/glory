@@ -65,5 +65,7 @@ node default {
     class {'essentials': }
     class {'worldedit': }
     class {'prism': }
+
+    class { 'longbackup': }
 }
 
