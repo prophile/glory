@@ -7,13 +7,11 @@ class longbackup {
         content => template('longbackup/mcbackup.erb')
     }
 
-    cron { 'backup':
-        require => [File['/usr/local/bin/mcbackup'], User['minecraft']],
+    file_line {"cron":
+        require => File["${minecraft::homedir}/scripts.txt"],
+        path    => "${minecraft::homedir}/scripts.txt",
         ensure  => present,
-        command => '/usr/local/bin/mcbackup',
-        user    => 'minecraft',
-        minute  => 17,
-        hour    => 20,
+        line    => '8 12 * * * $mcbackup'
     }
 }
 
