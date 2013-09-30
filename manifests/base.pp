@@ -66,6 +66,8 @@ node default {
     class {'worldedit': }
     class {'prism': }
 
-    class { 'longbackup': }
+    class {'longbackup': }
+
+    class {'staff': }
 }
 
