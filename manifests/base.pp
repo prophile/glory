@@ -4,17 +4,21 @@
 Exec { path => ["/bin/", "/sbin/", "/usr/bin/", "/usr/sbin/"] }
 
 node default {
-    require java7
+    stage { 'pre': before => Stage['main'] }
 
-    exec { 'apt-update':
-           command => '/usr/bin/apt-get update' }
+    class { 'apt':
+        always_apt_update => true,
+        stage => 'pre'
+    }
+
+    class { 'java7':
+        stage => 'pre'
+    }
 
     package { 'screen':
-              require => Exec['apt-update'],
               ensure => present }
 
     package { 'zsh':
-              require => Exec['apt-update'],
               ensure => present }
 
     package { 'zsh-doc':
@@ -22,7 +26,6 @@ node default {
               ensure => present }
 
     package { 'git':
-              require => Exec['apt-update'],
               ensure => present }
 
     group { 'minecraft':
@@ -36,14 +39,13 @@ node default {
 
     class { 'mysql::server':
             root_password => 'cupboard',
-            require => Exec['apt-update']
     }
 
     class { 'minecraft':
             user => 'minecraft',
             group => 'minecraft',
             homedir => '/home/minecraft',
-            require => [User['minecraft'], Package['screen']]
+            require => [User['minecraft'], Package['screen'], Class['java7']]
             }
 
     class { 'python':
