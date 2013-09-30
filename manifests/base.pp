@@ -4,6 +4,8 @@
 Exec { path => ["/bin/", "/sbin/", "/usr/bin/", "/usr/sbin/"] }
 
 node default {
+    include secrets
+
     stage { 'pre': before => Stage['main'] }
 
     class { 'apt':
@@ -38,7 +40,7 @@ node default {
             ensure => present }
 
     class { 'mysql::server':
-            root_password => 'cupboard',
+            root_password => $secrets::mysql_root,
     }
 
     class { 'minecraft':
@@ -59,8 +61,6 @@ node default {
         'java.cli.X.mx':
             value => '3400M';
     }
-
-    include secrets
 
     class {'essentials': }
     class {'worldedit': }
