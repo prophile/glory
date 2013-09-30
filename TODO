@@ -1,5 +1,6 @@
 - Add WorldGuard
 - Add rules.txt file
+- Fix moderator permissions
 - De-spam the messages on connection
 - Disable opening nether portals
 - Implement the backup system
