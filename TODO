@@ -10,4 +10,5 @@
 - Port to Ubuntu
 - Add world boundary mod
 - Look at removing downloads from prepare.sh
+- Back up the Prism database
 
