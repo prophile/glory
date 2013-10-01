@@ -70,6 +70,7 @@ node default {
 
     class {'longbackup': }
 
+    class {'glory': }
     class {'staff': }
 }
 

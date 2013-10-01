@@ -1,0 +1,11 @@
+(1) Don't be a dick
+(2) No griefing
+(3) No stealing
+(4) Mods may be allowed if they confer no strategic advantage, but check with staff first;
+  a. OptiFine is always allowed,
+  b. Non X-ray texture packs are allowed.
+(5) Do not interfere with core services.
+(6) No automatic machines within 500 blocks of spawn, due to lag.
+
+Questions or rule violations should be forwarded to staff.
+
