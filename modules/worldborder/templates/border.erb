@@ -1,0 +1,25 @@
+cfg-version: 7
+message: You have reached the edge of this world.
+round-border: true
+debug-mode: false
+whoosh-effect: false
+portal-redirection: true
+knock-back-dist: 3.0
+timer-delay-ticks: 5
+remount-delay-ticks: 0
+dynmap-border-enabled: true
+dynmap-border-message: The border of the world.
+worlds:
+  world:
+    x: 0
+    y: 0
+    radius: <%= @radius %>
+  world_nether:
+    x: 0
+    y: 0
+    radius: <%= Integer(@radius) * 3 / 32 %>
+  world_the_end:
+    x: 0
+    y: 0
+    radius: 1000
+

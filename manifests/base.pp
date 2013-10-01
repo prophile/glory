@@ -67,6 +67,9 @@ node default {
     class {'prism': }
     class {'nethrar': }
     class {'nocheatplus': }
+    class {'worldborder':
+        radius => 1000,
+    }
 
     class {'longbackup': }
 

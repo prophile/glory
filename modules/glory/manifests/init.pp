@@ -13,5 +13,7 @@ class glory {
         'motd':
             value => 'I like toast';
     }
+
+    $border_radius = 1000
 }
 

@@ -29,4 +29,8 @@ mkdir -p modules/nocheatplus/files
 pushd modules/nocheatplus/files
 wget --timestamping 'http://dev.bukkit.org/media/files/740/815/NoCheatPlus.jar'
 popd
+mkdir -p modules/worldborder/files
+pushd modules/worldborder/files
+wget --timestamping 'http://dev.bukkit.org/media/files/718/250/WorldBorder.jar'
+popd
 
