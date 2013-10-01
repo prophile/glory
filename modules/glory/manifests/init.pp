@@ -6,5 +6,12 @@ class glory {
         group  => $minecraft::group,
         mode   => '0644'
     }
+
+    minecraft::server_prop {
+        'difficulty':
+            value => 2;
+        'motd':
+            value => 'I like toast';
+    }
 }
 
