@@ -11,4 +11,5 @@
 - Add world boundary mod
 - Look at removing downloads from prepare.sh
 - Back up the Prism database
+- Clean out local backups after 1 week
 
