@@ -66,6 +66,7 @@ node default {
     class {'worldedit': }
     class {'prism': }
     class {'nethrar': }
+    class {'nocheatplus': }
 
     class {'longbackup': }
 

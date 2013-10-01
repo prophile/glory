@@ -25,4 +25,8 @@ mkdir -p modules/nethrar/files
 pushd modules/nethrar/files
 wget --timestamping 'http://dev.bukkit.org/media/files/584/602/Nethrar.jar'
 popd
+mkdir -p modules/nocheatplus/files
+pushd modules/nocheatplus/files
+wget --timestamping 'http://dev.bukkit.org/media/files/740/815/NoCheatPlus.jar'
+popd
 
