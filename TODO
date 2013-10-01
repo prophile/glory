@@ -1,6 +1,7 @@
 - Add WorldGuard
 - Add rules.txt file
 - Fix moderator permissions
+  - PermissionsEX
 - De-spam the messages on connection
 - Disable opening nether portals, maybe using Nethrar
 - Implement the backup system
@@ -9,4 +10,5 @@
 - Refactor the prepare script to do per-module bits
 - Port to Ubuntu
 - Add world boundary mod
+- Look at removing downloads from prepare.sh
 
