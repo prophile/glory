@@ -60,6 +60,10 @@ node default {
             value => '3400M';
         'java.cli.X.mx':
             value => '3400M';
+        'java.cli.XX.UseLargePages':
+            value => 'true';
+        'java.cli.XX.UseConcMarkSeepGC':
+            value => 'true';
     }
 
     class {'essentials': }
