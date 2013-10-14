@@ -2,5 +2,5 @@
 cd <%= scope['minecraft::homedir'] %>
 cd backups
 export TARGET=$(ls -1 | sort -n | tail -n 1)
-rsync "$TARGET" "<%= scope['secrets::backup_location'] %>/$TARGET"
+s3cmd put "$TARGET" "<%= scope['secrets::s3bucket'] %>/$TARGET"
 
