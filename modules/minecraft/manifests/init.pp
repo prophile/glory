@@ -120,7 +120,7 @@ class minecraft(
     ensure  => present,
     owner   => 'root',
     group   => 'root',
-    mode    => '0744',
+    mode    => '0755',
     content => template('minecraft/minecraft_init.erb'),
     require => [Python::Pip['mark2'],
                 File['/etc/mark2/mark2.properties']]
