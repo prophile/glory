@@ -62,7 +62,7 @@ node default {
             value => '3400M';
         'java.cli.XX.UseLargePages':
             value => 'true';
-        'java.cli.XX.UseConcMarkSeepGC':
+        'java.cli.XX.UseConcMarkSweepGC':
             value => 'true';
     }
 
