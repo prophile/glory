@@ -13,3 +13,6 @@
 [submodule "modules/mysql"]
 	path = modules/mysql
 	url = http://github.com/puppetlabs/puppetlabs-mysql
+[submodule "modules/s3cmd"]
+	path = modules/s3cmd
+	url = http://github.com/capriza/capriza-s3cmd
