@@ -6,6 +6,8 @@ class staff {
 
     minecraft::mod {
         'prophile':;
+        'mud212':;
+        'mrxak':;
     }
 }
 
