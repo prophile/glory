@@ -4,6 +4,11 @@ class essentials {
     require => File["${minecraft::homedir}/plugins/Essentials/config.yml"]
   }
 
+  minecraft::plugin {"EssentialsProtect":
+    source  => "puppet:///modules/essentials/EssentialsProtect.jar",
+    require => Minecraft::Plugin["Essentials"]
+  }
+
   file {"${minecraft::homedir}/plugins/Essentials":
     ensure  => directory,
     owner   => $minecraft::user,
