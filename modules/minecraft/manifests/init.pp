@@ -126,6 +126,17 @@ class minecraft(
                 File['/etc/mark2/mark2.properties']]
   }
 
+  package { 'tmpreaper':
+    ensure => present
+  }
+
+  cron { 'backup-rotate':
+    ensure  => present,
+    minute  => '22',
+    command => "tmpreaper 7d ${homedir}/backups",
+    require => Package['tmpreaper']
+  }
+
   service { 'minecraft':
     ensure     => running,
     hasrestart => true,
