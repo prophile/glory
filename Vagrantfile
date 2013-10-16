@@ -7,10 +7,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntus1304"
   config.vm.box_url = "https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box"
 
-  # Minecraft protocol
   config.vm.network "forwarded_port", guest: 25565, host: 25565
-  # RCON protocol
-  config.vm.network "forwarded_port", guest: 25575, host: 25575
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", 4096]
