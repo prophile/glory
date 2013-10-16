@@ -79,5 +79,10 @@ node default {
 
     class {'glory': }
     class {'staff': }
+
+    minecraft::server_prop {
+        'rcon.port':
+            value => '25575';
+    }
 }
 
