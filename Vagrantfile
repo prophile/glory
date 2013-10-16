@@ -4,8 +4,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "debian7"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-70rc1-x64-vbox4210.box"
+  config.vm.box = "ubuntus1304"
+  config.vm.box_url = "https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box"
 
   # Minecraft protocol
   config.vm.network "forwarded_port", guest: 25565, host: 25565
