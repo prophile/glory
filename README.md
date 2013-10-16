@@ -39,8 +39,7 @@ Backups
 Hourly backups are stored in /home/minecraft/backups. Long-term backups
 are stored on S3.
 
-A backup can be restored from the tar.gz with mc-restore-backup
-[path]. This is not yet implemented.
+A backup can be restored from the tar.gz with mc-restore [path].
 
 Configuration
 -------------
