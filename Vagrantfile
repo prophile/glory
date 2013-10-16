@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box"
 
   config.vm.network "forwarded_port", guest: 25565, host: 25565
+  config.vm.network "forwarded_port", guest: 25565, host: 25565, protocol: :udp
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", 4096]
