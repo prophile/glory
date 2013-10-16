@@ -14,7 +14,7 @@ prism:
   mysql:
     hostname: 127.0.0.1
     username: prism
-    password: <%= scope['secrets::prism_password'] %>
+    password: <%= scope.lookupvar('secrets::prism_password') %>
     database: prism_logs
     port: '3306'
   sqlite:
