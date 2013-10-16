@@ -79,5 +79,14 @@ node default {
 
     class {'glory': }
     class {'staff': }
+
+    minecraft::server_prop {
+        'enable-query':
+            value => 'true';
+        'query.port':
+            value => 25565;
+        'enable-rcon':
+            value => 'false';
+    }
 }
 
