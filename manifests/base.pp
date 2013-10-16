@@ -81,6 +81,8 @@ node default {
     class {'staff': }
 
     minecraft::server_prop {
+        'rcon.password':
+            value => $secrets::rcon_password;
         'rcon.port':
             value => '25575';
     }
