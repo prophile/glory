@@ -3,5 +3,11 @@ class staff {
         'nfreader':;
         'adminphile':;
     }
+
+    permissions::mod {
+        'prophile':;
+        'mud212':;
+        'mrxak':;
+    }
 }
 
