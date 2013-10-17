@@ -33,4 +33,8 @@ mkdir -p modules/worldborder/files
 pushd modules/worldborder/files
 wget --timestamping 'http://dev.bukkit.org/media/files/718/250/WorldBorder.jar'
 popd
+mkdir -p modules/permissionsex/files
+pushd modules/permissionsex/files
+wget --timestamping 'http://dev.bukkit.org/media/files/742/103/PermissionsEx.jar'
+popd
 

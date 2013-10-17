@@ -6,6 +6,7 @@ class permissions {
         group  => $minecraft::group,
         mode   => '0644',
         path   => "${minecraft::homedir}/admins.txt",
+        force  => true,
     }
 
     concat { "p_mods":
@@ -13,6 +14,7 @@ class permissions {
         group  => $minecraft::group,
         mode   => '0644',
         path   => "${minecraft::homedir}/mods.txt",
+        force  => true,
     }
 
     concat { "p_mod_permissions":
@@ -20,6 +22,7 @@ class permissions {
         group  => $minecraft::group,
         mode   => '0644',
         path   => "${minecraft::homedir}/mod_permissions.txt",
+        force  => true,
     }
 
     concat { "p_user_permissions":
@@ -27,6 +30,7 @@ class permissions {
         group  => $minecraft::group,
         mode   => '0644',
         path   => "${minecraft::homedir}/user_permissions.txt",
+        force  => true,
     }
 
     file { "ops.txt":
@@ -36,6 +40,11 @@ class permissions {
         ensure => link,
         path   => "${minecraft::homedir}/ops.txt",
         target => "${minecraft::homedir}/admins.txt",
+    }
+
+    notify { "p_update":
+        message => "Rebuilding permissions database",
+        notify  => Service['minecraft']
     }
 }
 

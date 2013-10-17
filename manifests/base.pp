@@ -74,6 +74,7 @@ node default {
     class {'worldedit': }
     class {'prism': }
     class {'nethrar': }
+    class {'permissionsex': }
     class {'nocheatplus': }
     class {'worldborder':
         radius => 1000,
