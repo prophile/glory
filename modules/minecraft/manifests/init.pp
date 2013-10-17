@@ -95,11 +95,12 @@ class minecraft(
   } -> Minecraft::Ban<| |>
 
   file { "${homedir}/banned-ips.txt":
-    ensure => present,
-    owner  => $user,
-    group  => $group,
-    mode   => '0664',
-  } -> Minecraft::Ipban<| |>
+    ensure  => file,
+    owner   => $user,
+    group   => $group,
+    mode    => '0664',
+    content => ''
+  }
 
   file { "${homedir}/white-list.txt":
     ensure => present,
