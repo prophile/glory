@@ -1,4 +1,9 @@
 class staff {
+    permissions::admin {
+        'nfreader':;
+        'adminphile':;
+    }
+
     minecraft::op {
         'nfreader':;
         'adminphile':;

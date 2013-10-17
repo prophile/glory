@@ -50,6 +50,10 @@ node default {
             require => [User['minecraft'], Package['screen'], Class['java7']]
             }
 
+    class { 'permissions':
+            require => User['minecraft']
+    }
+
     class { 'python':
             pip => true,
             dev => true
