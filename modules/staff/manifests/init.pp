@@ -9,5 +9,9 @@ class staff {
         'mud212':;
         'mrxak':;
     }
+
+    permissions::mod_permission {
+        'prism.*':;
+    }
 }
 
