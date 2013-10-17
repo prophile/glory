@@ -60,26 +60,6 @@ class minecraft(
     mode   => '0664',
   } -> Minecraft::Server_Prop<| |>
 
-  file { "${homedir}/ops.txt":
-    ensure => present,
-    owner  => $user,
-    group  => $group,
-    mode   => '0664',
-  }
-
-  file { "${homedir}/permissions.yml":
-    ensure  => file,
-    owner   => $user,
-    group   => $group,
-    mode    => '0644',
-    source  => 'puppet:///modules/minecraft/permissions.yml',
-    require => File["${homedir}/ops.txt"],
-  }
-
-  File["${homedir}/permissions.yml"] -> Minecraft::Op<| |>
-  File["${homedir}/permissions.yml"] -> Minecraft::Mod<| |>
-
-
   file { "${homedir}/plugins":
     ensure => directory,
     owner  => $user,
