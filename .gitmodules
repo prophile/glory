@@ -16,3 +16,6 @@
 [submodule "modules/s3cmd"]
 	path = modules/s3cmd
 	url = http://github.com/capriza/capriza-s3cmd
+[submodule "modules/concat"]
+	path = modules/concat
+	url = http://github.com/puppetlabs/puppetlabs-concat
