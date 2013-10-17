@@ -37,8 +37,6 @@ class staff {
         'essentials.tp.others':;
         'essentials.tphere':;
         'essentials.tppos':;
-        # God mode (for when dealing with, say, lava grief)
-        'essentials.god':;
         # Server information
         'bukkit.command.tps':;
         # WorldEdit grief recovery tools
