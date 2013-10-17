@@ -11,7 +11,41 @@ class staff {
     }
 
     permissions::mod_permission {
+        # Full prism access
         'prism.*':;
+        # Ban system access
+        'essentials.unban':;
+        'essentials.ban.notify':;
+        'essentials.tempban':;
+        'essentials.tempban.offline':;
+        'essentials.mute':;
+        'essentials.mute.notify':;
+        'essentials.kick':;
+        'essentials.kick.notify':;
+        'essentials.ban':;
+        # Announcements
+        'essentials.broadcast':;
+        'bukkit.command.say':;
+        # Inventory administration
+        'essentials.clearinventory':;
+        'essentials.clearinventory.others':;
+        'essentials.invsee':;
+        # Vanish
+        'essentials.vanish':;
+        # TP access
+        'essentials.tp':;
+        'essentials.tp.others':;
+        'essentials.tphere':;
+        'essentials.tppos':;
+        # God mode (for when dealing with, say, lava grief)
+        'essentials.god':;
+        # Server information
+        'bukkit.command.tps':;
+        # WorldEdit grief recovery tools
+        'worldedit.extinguish':;
+        # NCP information
+        'nocheatplus.notify':;
+        'nocheatplus.shortcut.safeadmin':;
     }
 
     permissions::user_permission {
