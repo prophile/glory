@@ -14,6 +14,11 @@ class glory {
             value => 'WARNING: temporary map';
     }
 
+    minecraft::mark2_prop {
+        'plugin.backup.spec':
+            value => 'world;world_nether;world_the_end';
+    }
+
     $border_radius = 1000
 }
 
