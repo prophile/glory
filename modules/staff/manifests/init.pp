@@ -70,5 +70,10 @@ class staff {
         # Help pages
         'essentials.help':;
     }
+
+    # Log everyone in prism
+    permissions::global_forbid {
+        'prism.ignore.tracking.*':;
+    }
 }
 
