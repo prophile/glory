@@ -67,13 +67,6 @@ class minecraft(
     mode   => '0755',
   } -> Minecraft::Plugin<| |>
 
-  file { "${homedir}/banned-players.txt":
-    ensure => present,
-    owner  => $user,
-    group  => $group,
-    mode   => '0664',
-  } -> Minecraft::Ban<| |>
-
   file { "${homedir}/banned-ips.txt":
     ensure  => file,
     owner   => $user,
