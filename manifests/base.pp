@@ -76,6 +76,7 @@ node default {
     class {'nethrar': }
     class {'permissionsex': }
     class {'nocheatplus': }
+    class {'worldguard': }
     class {'worldborder':
         radius => 1000,
     }

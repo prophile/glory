@@ -37,4 +37,9 @@ mkdir -p modules/permissionsex/files
 pushd modules/permissionsex/files
 wget --timestamping 'http://dev.bukkit.org/media/files/742/103/PermissionsEx.jar'
 popd
+mkdir -p modules/worldguard/files
+pushd modules/worldguard/files
+wget --timestamping 'http://dev.bukkit.org/media/files/719/258/worldguard-5.8.zip'
+unzip -u worldguard-5.8.zip
+popd
 
