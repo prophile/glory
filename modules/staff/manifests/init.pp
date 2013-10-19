@@ -44,6 +44,8 @@ class staff {
         # NCP information
         'nocheatplus.notify':;
         'nocheatplus.shortcut.safeadmin':;
+        # Fire handling via WorldGuard
+        'worldguard.fire-toggle.*':;
     }
 
     permissions::user_permission {
