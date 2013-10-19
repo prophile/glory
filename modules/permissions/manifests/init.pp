@@ -33,6 +33,14 @@ class permissions {
         force  => true,
     }
 
+    concat { "p_global_forbid":
+        owner  => $minecraft::user,
+        group  => $minecraft::group,
+        mode   => '0644',
+        path   => "${minecraft::homedir}/global_forbid.txt",
+        force  => true,
+    }
+
     file { "ops.txt":
         owner  => $minecraft::user,
         group  => $minecraft::group,
