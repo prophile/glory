@@ -10,16 +10,18 @@ with open("{}/mod_permissions.txt".format(TARGET)) as f:
     mperms = [perm.strip() for perm in f if perm]
 with open("{}/user_permissions.txt".format(TARGET)) as f:
     uperms = [perm.strip() for perm in f if perm]
+with open("{}/global_forbid.txt".format(TARGET)) as f:
+    fperms = ["-{}".format(perm.strip()) for perm in f if perm]
 
 groups = {}
 users = {}
 
 # General users group
-groups['default'] = {'default': True, 'permissions': uperms}
+groups['default'] = {'default': True, 'permissions': fperms + uperms}
 # Mods group
-groups['mods'] = {'permissions': mperms}
+groups['mods'] = {'permissions': fperms + mperms}
 # Admins group
-groups['admins'] = {'permissions': ['*']}
+groups['admins'] = {'permissions': fperms + ['*']}
 
 for adm in admins:
     users[adm] = {'group': ['admins']}
