@@ -75,5 +75,18 @@ class staff {
     permissions::global_forbid {
         'prism.ignore.tracking.*':;
     }
+
+    # Disable essentials economy entirely
+    permissions::global_forbid {
+        'essentials.balance':;
+        'essentials.balance.others':;
+        'essentials.balancetop':;
+        'essentials.eco':;
+        'essentials.eco.loan':;
+        'essentials.pay':;
+        'essentials.sell':;
+        'essentials.setworth':;
+        'essentials.worth':;
+    }
 }
 
