@@ -11,7 +11,7 @@ class glory {
         'difficulty':
             value => 2;
         'motd':
-            value => 'I like toast';
+            value => 'WARNING: temporary map';
     }
 
     $border_radius = 1000
