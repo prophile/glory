@@ -16,7 +16,7 @@ class glory {
 
     minecraft::mark2_prop {
         'plugin.backup.spec':
-            value => 'world;world_nether;world_the_end';
+            value => 'world;world_nether;world_the_end;banned-players.txt';
     }
 
     $border_radius = 1000
