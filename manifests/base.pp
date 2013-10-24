@@ -70,21 +70,22 @@ node default {
             value => 'true';
     }
 
-    class {'essentials': }
-    class {'worldedit': }
-    class {'prism': }
-    class {'nethrar': }
-    class {'permissionsex': }
-    class {'nocheatplus': }
-    class {'worldguard': }
+    include essentials
+    include worldedit
+    include prism
+    include nethrar
+    include permissionsex
+    include nocheatplus
+    include worldguard
+
     class {'worldborder':
         radius => 1000,
     }
 
-    class {'longbackup': }
+    include longbackup
 
-    class {'glory': }
-    class {'staff': }
+    include glory
+    include staff
 
     minecraft::server_prop {
         'enable-query':
