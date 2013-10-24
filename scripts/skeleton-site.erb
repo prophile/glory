@@ -31,7 +31,7 @@ node default {
     <% end %>
     
     <% if settings["s3"]["backups"] %>
-    class {'longbackups':
+    class {'longbackup':
         bucket => '<%= settings["s3"]["bucket"] %>'
     }
     <% end %>
