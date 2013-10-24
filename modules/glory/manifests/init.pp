@@ -1,6 +1,17 @@
 class glory {
     include secrets
     
+    stage { 'pre': before => Stage['main'] }
+
+    class { 'apt':
+        always_apt_update => true,
+        stage => 'pre'
+    }
+    
+    class { 'java7':
+        stage => 'pre'
+    }
+    
     # MySQL
     class { 'mysql::server':
         root_password => $secrets::mysql_root
