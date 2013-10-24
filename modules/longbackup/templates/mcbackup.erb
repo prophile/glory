@@ -2,5 +2,5 @@
 cd <%= scope.lookupvar('minecraft::homedir') %>
 cd backups
 export TARGET=$(ls -1 | sort -n | tail -n 1)
-s3cmd put "$TARGET" "<%= scope.lookupvar('secrets::s3bucket') %>/$TARGET"
+s3cmd put "$TARGET" "<%= @bucket %>/$TARGET"
 

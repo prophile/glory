@@ -1,6 +1,4 @@
 class glory {
-    include secrets
-
     stage { 'pre': before => Stage['main'] }
 
     class { 'apt':
@@ -10,11 +8,6 @@ class glory {
 
     class { 'java7':
         stage => 'pre'
-    }
-
-    # MySQL
-    class { 'mysql::server':
-        root_password => $secrets::mysql_root
     }
 
     # Minecraft package
@@ -48,8 +41,6 @@ class glory {
     include staff
 
     # Backups
-    include longbackup
-
     minecraft::mark2_prop {
         'plugin.backup.spec':
             value => 'world;world_nether;world_the_end;banned-players.txt;plugins/Nethrar/portals.yml;plugins/Essentials/spawn.yml';
@@ -76,7 +67,6 @@ class glory {
 
     include essentials
     include worldedit
-    include prism
     include nethrar
     include permissionsex
     include nocheatplus
