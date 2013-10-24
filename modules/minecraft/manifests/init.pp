@@ -18,12 +18,21 @@
 #  }
 #
 class minecraft(
-  $user          = 'mcserver',
-  $group         = 'mcserver',
-  $homedir       = '/opt/minecraft',
-  $heap_size     = 2048,
-  $heap_start    = 512,
+  $user          = 'minecraft',
+  $group         = 'minecraft',
+  $homedir       = '/home/minecraft',
 ) {
+
+  group { 'minecraft':
+    ensure => present;
+  }
+  
+  user { 'minecraft':
+    managehome => true,
+    gid        => 'minecraft',
+    ensure     => present,
+    require    => Group['minecraft']
+  }
 
   python::pip { 'mark2':
     ensure => present
@@ -117,6 +126,12 @@ class minecraft(
     require    => File['/etc/init.d/minecraft'],
     subscribe  => [File["${homedir}/spigot.jar"],
                    File["${homedir}/scripts.txt"]],
+  }
+
+  # Disable RCON with mark2
+  minecraft::server_prop {
+    'enable-rcon':
+        value => 'false';
   }
 
   minecraft::mark2_prop {
