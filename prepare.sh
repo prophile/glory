@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 if [ ! -f settings.yaml ]
   then
     echo "No settings.yaml found."
