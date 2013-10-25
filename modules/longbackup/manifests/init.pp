@@ -1,4 +1,4 @@
-class longbackup {
+class longbackup($bucket) {
     file { '/usr/local/bin/mcbackup':
         ensure  => file,
         owner   => 'root',

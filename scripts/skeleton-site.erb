@@ -1,0 +1,52 @@
+Exec { path => ["/bin/", "/sbin/", "/usr/bin/", "/usr/sbin/"] }
+
+node default {
+    include glory
+
+    minecraft::server_prop {
+        'level-seed':
+            value => '<%= settings['level-seed'] %>';
+    }
+
+    <% unless settings["admins"].empty? %>
+    permissions::admin {
+    <% settings["admins"].each do |admin| %>
+        '<%= admin %>':;
+    <% end %>
+    }
+    <% end %>
+
+    <% unless settings["mods"].empty? %>
+    permissions::mod {
+    <% settings["mods"].each do |mod| %>
+        '<%= mod %>':;
+    <% end %>
+    }
+    <% end %>
+
+    <% if settings["s3"]["backups"] or settings["s3"]["autoprovision"] %>
+    class {'s3cmd':
+        aws_access_key => '<%= settings["s3"]["access-key"] %>',
+        aws_secret_key => '<%= settings["s3"]["secret-key"] %>',
+        gpg_passphrase => 'cucumber',
+        owner => 'minecraft',
+        require => User['minecraft']
+    }
+    <% end %>
+
+    <% if settings["s3"]["backups"] %>
+    class {'longbackup':
+        bucket => '<%= settings["s3"]["bucket"] %>'
+    }
+    <% end %>
+
+    class { 'mysql::server':
+        root_password => '<%= settings["passwords"]["mysql"]["root"] %>'
+    }
+
+    class { 'prism':
+        password => '<%= settings["passwords"]["mysql"]["prism"] %>',
+        require  => Class['mysql::server']
+    }
+}
+

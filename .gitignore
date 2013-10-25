@@ -1,2 +1,4 @@
 .vagrant
 .vagrant.*
+site.pp
+settings.yaml

@@ -1,7 +1,7 @@
-class prism {
+class prism($password) {
   mysql::db { 'prism_logs':
     user     => 'prism',
-    password => $secrets::prism_password,
+    password => $password,
     host     => 'localhost',
     grant    => ['all'],
   }

@@ -1,0 +1,29 @@
+# EXAMPLE settings file
+
+# Staff listings
+admins:
+ - notch
+
+mods:
+ - Dinnerbone
+ - jeb
+ - Grumm
+
+# Passwords
+passwords:
+  mysql:
+    root: password123 # MySQL root access password
+    prism: password123 # Prism user password
+
+# Level seed
+level-seed: swordfish
+
+# S3 credentials
+s3:
+  backups: false # back up to S3
+  autoprovision: true # download world from S3
+  access-key: foo
+  secret-key: bar
+  bucket: s3://bazz
+
+

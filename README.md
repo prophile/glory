@@ -4,16 +4,15 @@ Glory
 Installing
 ----------
 
-1. Run `./prepare.sh`
-2. Select your config. For the live server this is 'glory'
-3. Enter the config password
-4. Run `vagrant up`
+1. Write a `settings.yaml` - there is an example in `settings.yaml.example`
+2. Run `./prepare.sh`
+3. Run `vagrant up`
 
 Updating
 --------
 
 1. Run `git pull`
-2. Rerun `./prepare.sh` - you will not be prompted for the password
+2. Rerun `./prepare.sh`
 3. Run `vagrant provision`
 
 Starting and stopping the VM
@@ -44,26 +43,9 @@ A backup can be restored from the tar.gz with mc-restore [path].
 Configuration
 -------------
 
-The staff lists are part of the git repo, and are in
-modules/staff/manifests/init.pp. Rerun `vagrant provision` after changing.
-
 Public server configuration details are in
 modules/glory/manifests/init.pp. Rerun `vagrant provision` after changing.
 
-Private server details (the level seed, and various passwords) are stored
-in the secrets file.
-
-The Secrets File
-----------------
-
-The secrets file, modules/secrets/manifests/init.pp, contains root
-passwords and the level seed. This is privileged information.
-
-As a result, it is not stored in git - an encrypted version of it is.
-
-It is decrypted as part of the prepare process. To decrypt it afresh,
-run `scripts/decrypt.sh`.
-
-After changes, to encrypt again so it can be included in the repo, run
-`scripts/encrypt.sh`.
+Private server details (the level seed, and various passwords) as well as
+the staff list are stored in `settings.yaml`.
 
