@@ -1,0 +1,3 @@
+&6Type &c/rules&6 to see the server rules.
+&6Visit &fhttp://minecraft.nfreader.net&6 for help and more information.
+
