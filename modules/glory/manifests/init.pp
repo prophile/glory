@@ -52,7 +52,7 @@ class glory {
     
     minecraft::mark2_prop {
         'plugin.backup.spec':
-            value => 'world;world_nether;world_the_end;banned-players.txt;plugins/Nethrar/portals.yml;plugins/Essentials/spawn.yml';
+            value => 'world;world_nether;world_the_end;banned-players.txt;plugins/WorldGuard/worlds;plugins/Nethrar/portals.yml;plugins/Essentials/spawn.yml';
     }
     
     # Rules
