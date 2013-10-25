@@ -26,6 +26,8 @@ class staff {
         'essentials.tp.others':;
         'essentials.tphere':;
         'essentials.tppos':;
+        # User information
+        'essentials.whois':;
         # Server information
         'bukkit.command.tps':;
         # WorldEdit grief recovery tools
