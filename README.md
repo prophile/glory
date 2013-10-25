@@ -35,16 +35,16 @@ stop|start|restart`.
 Backups
 -------
 
-Hourly backups are stored in /home/minecraft/backups. Long-term backups
+Hourly backups are stored in `/home/minecraft/backups`. Long-term backups
 are stored on S3.
 
-A backup can be restored from the tar.gz with mc-restore [path].
+A backup can be restored from the tar.gz with `mc-restore [path]`.
 
 Configuration
 -------------
 
 Public server configuration details are in
-modules/glory/manifests/init.pp. Rerun `vagrant provision` after changing.
+`modules/glory/manifests/init.pp`. Rerun `vagrant provision` after changing.
 
 Private server details (the level seed, and various passwords) as well as
 the staff list are stored in `settings.yaml`.
