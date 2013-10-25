@@ -56,6 +56,14 @@ class glory {
         mode   => '0644'
     }
 
+    file { "${minecraft::homedir}/plugins/Essentials/motd.txt":
+        ensure => file,
+        source => 'puppet:///modules/glory/motd.txt',
+        owner  => $minecraft::user,
+        group  => $minecraft::group,
+        mode   => '0644'
+    }
+
     minecraft::server_prop {
         'difficulty':
             value => 2;
