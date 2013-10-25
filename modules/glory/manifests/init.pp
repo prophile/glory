@@ -95,5 +95,14 @@ class glory {
         'java.cli.XX.UseConcMarkSweepGC':
             value => 'true';
     }
+
+    # Server icon
+    file { "${minecraft::homedir}/server-icon.png":
+        ensure => file,
+        mode   => '0644',
+        owner  => 'minecraft',
+        group  => 'minecraft',
+        source => 'puppet:///modules/glory/hypnotoad_icon.png'
+    }
 }
 
