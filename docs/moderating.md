@@ -86,3 +86,12 @@ There are a huge number of parameters which you can use, with the full list docu
 Client Hacks
 ------------
 
+Occasionally, players will use client-side hacks, which are against the server's rules. The most basic client-side hack is the X-Ray pack.
+
+X-ray packs allow one to see ores in the distance and thus be able to mine directly to them rather than discovering them in the normal fashion. To some extent, we already combat this. The server wrapper that we use, [Spigot](http://www.spigotmc.org/), includes ore obfuscation. Essentially what this means is that ores that you cannot directly see will appear as stone, so X-ray texture packs will not reveal any ores.
+
+Unfortunately, X-ray packs are far from the worst hacking that clients can do -- that would fall to some of the nastier features of the Nodus custom Minecraft client. We counter Nodus with a Minecraft plugin called [NoCheatPlus](http://dev.bukkit.org/bukkit-plugins/nocheatplus/). NoCheatPlus, or NCP, is far less forgiving than the normal Minecraft server, and will block client-side actions it does not expect as well as warning online admins and moderators of what it has done.
+
+Now, these warnings are not always indicators of malicious clients. In fact, there are quite a few false positives caused by lag. Generally these will be warnings for fast block breaking, fast healing, or other "fast" actions. If you see one or two of these, particularly from a number of players, ignore them. If it's being a nuisance to someone who you feel confident is not using client-side hacks, you can exempt them from checks for the rest of their session with `/ncp exempt <player>`.
+
+If, however, you get a lot of messages from a particular player, particularly unusual messages such as the improbability check, they may well be using a hacked client. Confronting them about it is wise, as they may well have an intention to grief the server.
