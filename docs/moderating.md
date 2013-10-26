@@ -35,7 +35,8 @@ In case of suspected rule-breakers, it may well be useful to actually just keep 
 
 You have access to a number of basic teleportation commands to move around the map for moderation purposes.
 
-TODO: describe the `/tp` command family
+* `/tp <player>` allows you to teleport directly to the current position of a player.
+* `/tppos <x> <y> <z>` allows you to teleport to a particular position.
 
 Handling Griefers
 -----------------
