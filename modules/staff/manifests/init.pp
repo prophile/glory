@@ -79,5 +79,11 @@ class staff {
         'essentials.setworth':;
         'essentials.worth':;
     }
+
+    # Disable socialspy due to ethical concerns
+    permissions::global_forbid {
+        'essentials.socialspy':;
+        'essentials.socialspy.others':;
+    }
 }
 
