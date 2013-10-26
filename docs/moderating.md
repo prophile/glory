@@ -15,6 +15,8 @@ Moderator Guidelines
 Mod/Admin Chat
 --------------
 
+The mod and admin chat is available at https://neffy.hipchat.com/chat. You should have received an invite to this, if you didn't then please contact one of the admins.
+
 Bans
 ----
 
