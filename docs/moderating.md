@@ -49,6 +49,20 @@ You have access to the `//extinguish` command to put out fire griefing in the lo
 Prism Logs
 ----------
 
+[Prism](http://discover-prism.com/) is the block-logging plugin that we use. Almost anything that one can do to interact with the world will be recorded in a database to be inspected in future and, potentially, reverted.
+
+Most of prism falls under the `/prism` command, which may be abbreviated as `/pr`.
+
+A good place to start with Prism is `/pr near`, or `/pr near <radius>`, which will show you a list of changes within that area. If there is more than one page of results (likely around anywhere built-up), you can use `/pr page <number>` or `/pr page next` and `/pr page prev` to scroll through.
+
+For slightly finer grained control, you can use the Prism wand, which is a tool that lets you click on a block to get the logs for that particular location, or right click on a block face to get the logs for the location the block is facing. You can think of it as if you are holding a block -- left-clicking on a block gives you the log for the block you would be breaking, right-clicking on a block gives you the log for the location where you would be placing a block.
+
+To toggle the prism wand, use `/pr i` (with `i` shorthand for "inspection").
+
+For more complex lookups, the full database can be queried with `/pr l <params>`. The parameters are quite flexible and too long to document here, if you need to use this tool then Prism's [own documentation](http://discover-prism.com/wiki/view/parameters/) is the place to search.
+
+Finally, you will notice a number associated with each action. You can teleport to the location of any logged action with `/pr tp <index>`. You can also then scroll through with `/pr tp next` and `/pr tp prev`.
+
 Rollbacks
 ---------
 
