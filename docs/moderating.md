@@ -40,6 +40,12 @@ TODO: describe the `/tp` command family
 Handling Griefers
 -----------------
 
+If you find that someone is actively griefing before your very eyes, your first priority is to stop them. This takes precedence over the normal soft-touch approach. Kicks and bans to keep them away while you repair damage are not unreasonable, and it is left to your judgement whether to unban afterwards and allow them to return to be spoken to or just to remove them from the server.
+
+As a rule of thumb, players we know who decide to grief should be allowed back to be asked not to do so again unless they have griefed before; a new player who arrives just to grief is probably a good candidate for an outright immediate ban unless anyone speaks up in their defence.
+
+You have access to the `//extinguish` command to put out fire griefing in the local area; beyond that, Prism is your best friend for repairing griefing. If you're having problems undoing griefer damage, do not hesitate to contact one of the admins, who have access to a few more methods of repairing griefing.
+
 Prism Logs
 ----------
 
