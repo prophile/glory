@@ -44,8 +44,6 @@ If you find that someone is actively griefing before your very eyes, your first 
 
 As a rule of thumb, players we know who decide to grief should be allowed back to be asked not to do so again unless they have griefed before; a new player who arrives just to grief is probably a good candidate for an outright immediate ban unless anyone speaks up in their defence.
 
-You have access to the `//extinguish` command to put out fire griefing in the local area; beyond that, Prism is your best friend for repairing griefing. If you're having problems undoing griefer damage, do not hesitate to contact one of the admins, who have access to a few more methods of repairing griefing.
-
 Prism Logs
 ----------
 
@@ -65,6 +63,25 @@ Finally, you will notice a number associated with each action. You can teleport 
 
 Rollbacks
 ---------
+
+If a griefer has actually done damage, you can roll back specific actions with Prism.
+
+As a start, you have two basic tools from Prism in the form of `/pr drain <radius>` and `/pr ex <radius>` which will respectively drain liquids and put out fires within that radius.
+
+To roll back a specific set of actions, you specify which actions to roll back via parameters, documented below. You can then use `/pr preview rollback <params>` to preview the effects that your rollback will have, and if you are satisfied then use `/pr preview apply` to apply that rollback, or use `/pr preview cancel` to prevent the changes from happening.
+
+It is possible to apply rollbacks without preview, but not recommended.
+
+### Parameters
+
+You can specify any number of these, and those actions which satisfy all the parameters will be considered.
+
+There are a huge number of parameters which you can use, with the full list documented [on Prism's website](http://discover-prism.com/wiki/view/parameters/), but here we will go into only the basic few.
+
+* `r:<radius>` constrains actions to only those within a given radius from your current position. This defaults to 20. `r:global` removes this restriction and will apply rollbacks to the entire world, use with extreme caution.
+* `before:<time>` constraints actions to those which occurred before `<time>` long ago. As an example, `before:1d4h` will return only those actions which occurred more than 28 hours ago.
+* `since:<time>` works much like `before`, but inverted: only those actions which occurred since `<time>` ago are returned.
+* `p:<player>` yields only those actions performed particularly by a given player. You can also invert that logic with `!`: for instance `p:!Dinnerbone` will yield actions performed by anyone other than Dinnerbone.
 
 Client Hacks
 ------------
