@@ -5,7 +5,10 @@ It is possible to run Glory on a dedicated server. These are the install steps.
 
 1. Set up a generic admin account as the first user account on the target machine (a recent Debian or Ubuntu).
 2. Get up-to-date packages with `apt-get update`.
-3. Install `puppet`, `git` and `unzip` with `apt-get install`.
+3. Using `apt-get install`, install:
+  1. `puppet`
+  2. `git`
+  3. `unzip`
 4. Clone the Glory repository (`git clone https://github.com/prophile/glory`) and `cd` into it.
 5. Write the `settings.yaml` file as per usual.
 6. Run `./prepare.sh`.
