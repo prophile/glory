@@ -48,5 +48,36 @@ node default {
         password => '<%= settings["passwords"]["mysql"]["prism"] %>',
         require  => Class['mysql::server']
     }
+
+    <% settings["user-accounts"].each do |account|
+        account_page = read_uri "https://api.github.com/users/#{account}"
+        account_info = JSON.parse(account_page)
+
+        keys = read_uri "https://github.com/#{account}.keys"
+    %>
+    user { '<%= account %>':
+        ensure     => present,
+        homedir    => '/home/<%= account %>',
+        group      => 'admin',
+        managehome => true,
+        comment    => "<%= account_info["name"] %>"
+    }
+
+    file { "/home/<%= account %>/.ssh":
+        ensure  => directory,
+        owner   => "<%= account %>",
+        group   => 'admin',
+        mode    => "0700",
+        require => User['<%= account %>']
+    }
+
+    file { "/home/<%= account %>/.ssh/authorized_keys":
+        ensure  => file,
+        owner   => "<%= account %>",
+        mode    => "0600",
+        require => File["/home/<%= account %>/.ssh"],
+        content => <%= keys.inspect %>
+    }
+    <% end %>
 }
 

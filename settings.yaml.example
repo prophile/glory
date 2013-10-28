@@ -26,4 +26,10 @@ s3:
   secret-key: bar
   bucket: s3://bazz
 
+# User accounts
+# NOTE: this is only needed for dedicated servers - otherwise, just
+# leave it empty
+user-accounts: []
+#user-accounts:
+# - prophile
 

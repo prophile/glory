@@ -2,10 +2,18 @@
 
 require "erb"
 require "yaml"
+require "json"
+require "open-uri"
 
 begin
   file = File.read('settings.yaml')
   settings = YAML::load(file)
+
+  def read_uri(uri)
+    open(uri) do |f|
+      f.read
+    end
+  end
 
   erb = ERB.new File.read('scripts/skeleton-site.erb')
   File.open('manifests/base.pp', 'w') do |handle|
