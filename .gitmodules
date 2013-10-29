@@ -19,3 +19,6 @@
 [submodule "modules/concat"]
 	path = modules/concat
 	url = http://github.com/puppetlabs/puppetlabs-concat
+[submodule "modules/firewall"]
+	path = modules/firewall
+	url = http://github.com/puppetlabs/puppetlabs-firewall.git
