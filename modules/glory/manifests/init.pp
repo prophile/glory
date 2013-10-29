@@ -1,6 +1,10 @@
 class glory {
     stage { 'pre': before => Stage['main'] }
 
+    host { 'm.neffy.me':
+        ip => '127.0.0.1' # change me to v6
+    }
+
     class { 'apt':
         always_apt_update => true,
         stage => 'pre'
