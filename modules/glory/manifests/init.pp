@@ -117,6 +117,9 @@ class glory {
         source => 'puppet:///modules/glory/hypnotoad_icon.png'
     }
 
-    include firewall
+    include glory::firewall
+    class { 'glory::redirect':
+        stage => 'pre'
+    }
 }
 
