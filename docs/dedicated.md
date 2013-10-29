@@ -9,6 +9,7 @@ It is possible to run Glory on a dedicated server. These are the install steps.
   1. `puppet`
   2. `git`
   3. `unzip`
+  4. `ruby-hiera`
 4. Clone the Glory repository (`git clone https://github.com/prophile/glory`) and `cd` into it.
 5. Write the `settings.yaml` file as per usual.
 6. Run `./prepare.sh`.
