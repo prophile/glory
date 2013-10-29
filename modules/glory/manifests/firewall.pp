@@ -1,6 +1,6 @@
 class glory::firewall {
     exec { 'persist-firewall':
-        command     => '/sbin/iptables-save > /etc/sysconfig/iptables',
+        command     => '/sbin/iptables-save > /etc/iptables/rules.v4',
         refreshonly => true
     }
 
