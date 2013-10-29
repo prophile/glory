@@ -112,5 +112,7 @@ class glory {
         group  => 'minecraft',
         source => 'puppet:///modules/glory/hypnotoad_icon.png'
     }
+
+    include firewall
 }
 
