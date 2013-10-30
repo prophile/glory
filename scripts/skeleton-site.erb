@@ -80,6 +80,11 @@ node default {
         require => File["/home/<%= account %>/.ssh"],
         content => <%= keys.inspect %>
     }
+
+    sudoers::entry { "<%= account %>":
+        ensure   => present,
+        nopasswd => true,
+    }
     <% end %>
 }
 
