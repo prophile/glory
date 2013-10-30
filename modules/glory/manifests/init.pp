@@ -95,9 +95,9 @@ class glory {
     # Java settings
     minecraft::mark2_prop {
         'java.cli.X.ms':
-            value => '3400M';
+            value => '1792M';
         'java.cli.X.mx':
-            value => '3400M';
+            value => '1792M';
         'java.cli.XX.UseLargePages':
             value => 'true';
         'java.cli.XX.UseConcMarkSweepGC':
@@ -112,5 +112,7 @@ class glory {
         group  => 'minecraft',
         source => 'puppet:///modules/glory/hypnotoad_icon.png'
     }
+
+    include firewall
 }
 
