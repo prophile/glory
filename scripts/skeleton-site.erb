@@ -58,7 +58,8 @@ node default {
     user { '<%= account %>':
         ensure     => present,
         home       => '/home/<%= account %>',
-        gid        => 'admin',
+        gid        => 'staff',
+        groups     => ['sudo'],
         managehome => true,
         comment    => "<%= account_info["name"] %>"
     }
@@ -66,7 +67,7 @@ node default {
     file { "/home/<%= account %>/.ssh":
         ensure  => directory,
         owner   => "<%= account %>",
-        group   => 'admin',
+        group   => 'staff',
         mode    => "0700",
         require => User['<%= account %>']
     }
@@ -74,6 +75,7 @@ node default {
     file { "/home/<%= account %>/.ssh/authorized_keys":
         ensure  => file,
         owner   => "<%= account %>",
+        group   => 'staff',
         mode    => "0600",
         require => File["/home/<%= account %>/.ssh"],
         content => <%= keys.inspect %>
