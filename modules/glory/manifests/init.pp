@@ -75,6 +75,16 @@ class glory {
             value => 'WARNING: temporary map';
     }
 
+    # Sudoers management
+
+    include sudoers
+
+    sudoers::entry { 'admin':
+        ensure   => present,
+        isgroup  => true,
+        nopasswd => true
+    }
+
     # Plugins
 
     include essentials
