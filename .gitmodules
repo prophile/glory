@@ -22,3 +22,6 @@
 [submodule "modules/firewall"]
 	path = modules/firewall
 	url = http://github.com/puppetlabs/puppetlabs-firewall.git
+[submodule "modules/sudoers"]
+	path = modules/sudoers
+	url = http://github.com/jfryman/puppet-sudoers.git
