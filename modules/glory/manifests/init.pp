@@ -29,6 +29,8 @@ class glory {
             ensure => present;
         'git':
             ensure => present;
+        'bmon':
+            ensure => present;
     }
 
     # Python: necessary for mark2 and other useful things
