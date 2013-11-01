@@ -20,12 +20,13 @@ class longbackup($bucket) {
         require => Package['realpath']
     }
 
-    file_line {"cron":
-        require => [File["${minecraft::homedir}/scripts.txt"],
-                    File['/usr/local/bin/mcbackup']],
-        path    => "${minecraft::homedir}/scripts.txt",
-        ensure  => present,
-        line    => '8 12 * * * $mcbackup'
+    cron { "long-backup":
+        require => [File['/usr/local/bin/mcbackup'],
+                    User['minecraft']],
+        minute  => '8',
+        hour    => '4',
+        command => '/usr/local/bin/mcbackup',
+        user    => 'minecraft',
     }
 }
 
