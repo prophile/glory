@@ -96,3 +96,15 @@ Unfortunately, X-ray packs are far from the worst hacking that clients can do --
 Now, these warnings are not always indicators of malicious clients. In fact, there are quite a few false positives caused by lag. Generally these will be warnings for fast block breaking, fast healing, or other "fast" actions. If you see one or two of these, particularly from a number of players, ignore them. If it's being a nuisance to someone who you feel confident is not using client-side hacks, you can exempt them from checks for the rest of their session with `/ncp exempt <player>`.
 
 If, however, you get a lot of messages from a particular player, particularly unusual messages such as the improbability check, they may well be using a hacked client. Confronting them about it is wise, as they may well have an intention to grief the server.
+
+Stealing
+--------
+
+Occasionally, accusations of stealing will fly. These can be some of the worst to deal with, because the discussions get very heated and people get quite upset. Luckily, there are tools help deal with this.
+
+The first thing to remember is that Prism logs pretty much *everything*. That includes access to chests. You can get Prism logs from a chest showing who accessed it and when. As mentioned in the section of Prism, you can also filter down the logs to players excluding the chest's owner.
+
+There is a command called `/invsee <player>' which will let you look at any player's current inventory.
+
+If you do find that stealing has taken place, a few words to the wise to the first time offender will usually suffice. For repeat offenders, you may have to resort to more drastic measures -- as always, if unsure then give the admins a shout to resolve disputes.
+
