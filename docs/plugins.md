@@ -14,5 +14,5 @@ To add a new plugin to the system:
 Adding Permissions
 ------------------
 
-Permissions live in the file `modules/staff/manifests/init.pp`. They are separated
+Permissions live in the file `modules/glory/manifests/permissions.pp`. They are separated
 into two separate groups: mod permissions and user permissions.

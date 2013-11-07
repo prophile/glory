@@ -40,11 +40,11 @@ class glory {
     }
 
     # Permissions module
-    class { 'permissions':
+    class { '::permissions':
         require => User['minecraft']
     }
 
-    include staff
+    include glory::permissions
 
     # Backups
     minecraft::mark2_prop {

@@ -1,4 +1,4 @@
-class staff {
+class glory::permissions {
     permissions::mod_permission {
         # Full prism access
         'prism.*':;
