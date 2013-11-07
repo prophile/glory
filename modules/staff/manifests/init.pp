@@ -60,6 +60,10 @@ class staff {
         'essentials.msg.url':;
         # Help pages
         'essentials.help':;
+        # Basic TP commands
+        'essentials.home':;
+        'essentials.sethome':;
+        'essentials.back':;
     }
 
     # Log everyone in prism
