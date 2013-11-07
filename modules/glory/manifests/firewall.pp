@@ -1,17 +1,4 @@
 class glory::firewall {
-    exec { 'persist-firewall':
-        command     => '/sbin/iptables-save > /etc/iptables/rules.v4',
-        refreshonly => true
-    }
-
-    Firewall {
-        notify => Exec['persist-firewall']
-    }
-
-    Firewallchain {
-        notify => Exec['persist-firewall']
-    }
-
     class {
         '::firewall':
             before  => Class['glory::fw_post'],
