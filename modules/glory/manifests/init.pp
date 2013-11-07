@@ -75,6 +75,8 @@ class glory {
             value => 2;
         'motd':
             value => 'WARNING: temporary map';
+        'pvp':
+            value => false;
     }
 
     # Sudoers management
