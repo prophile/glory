@@ -50,9 +50,7 @@ class permissions {
         target => "${minecraft::homedir}/admins.txt",
     }
 
-    notify { "p_update":
-        message => "Rebuilding permissions database",
-        notify  => Service['minecraft']
+    anchor { "p_update":
     }
 }
 

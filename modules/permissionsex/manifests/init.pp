@@ -31,7 +31,7 @@ class permissionsex {
                 File["${minecraft::homedir}/user_permissions.txt"],
                 Python::Pip['pyyaml']],
     refreshonly => true,
-    subscribe => Notify['p_update'],
+    subscribe => Anchor['p_update'],
     notify    => Service['minecraft'],
   }
 
