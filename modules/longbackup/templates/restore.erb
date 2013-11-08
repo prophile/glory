@@ -8,4 +8,7 @@ rm -rf <%= path %>
 <% end %>
 echo "Restoring backup files"
 tar xzvf $SOURCE
+echo "Restoring the Prism database"
+mysql --password=<%= @pr_password %> --user=prism prism_logs < prism_dump.sql
+rm -f prism_dump.sql
 
