@@ -25,7 +25,7 @@ class prism($password) {
     ensure  => file,
     owner   => $minecraft::user,
     group   => $minecraft::group,
-    mode    => '0644',
+    mode    => '0444',
     content => template('prism/config.yml.erb')
   }
 }

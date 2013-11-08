@@ -12,7 +12,7 @@ class worldborder($radius) {
     ensure  => present,
     owner   => $minecraft::user,
     group   => $minecraft::group,
-    mode    => '0644',
+    mode    => '0444',
     require => [Minecraft::Plugin["WorldBorder"],
                 File["${minecraft::homedir}/plugins/WorldBorder"]],
     notify  => Service["minecraft"]
