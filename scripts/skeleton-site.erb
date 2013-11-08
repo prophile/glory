@@ -34,13 +34,12 @@ node default {
     }
     <% end %>
 
-    <% if settings["s3"]["backups"] %>
     class {'longbackup':
-        bucket => '<%= settings["s3"]["bucket"] %>'
-    }
-    <% else %>
-    class {'longbackup':}
+    <% if settings["s3"]["backups"] %>
+        bucket => '<%= settings["s3"]["bucket"] %>',
     <% end %>
+        pr_password => '<%= settings['passwords']['mysql']['prism'] %>'
+    }
 
     class { 'mysql::server':
         root_password => '<%= settings["passwords"]["mysql"]["root"] %>'

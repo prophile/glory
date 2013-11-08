@@ -22,6 +22,10 @@ if [ $MCRUNNING -eq 0 ];
     echo "Resuming level saving."
     mark2 send -w "Enabled level saving" -o save-on
 fi
+echo "Dumping the Prism database"
+mysqldump --add-drop-table --create-options --password=<%= @pr_password %> --user=prism prism_logs > prism_dump.sql
+tar --append --file $NAME prism_dump.sql
 echo "Compressing tar"
 gzip -9 $NAME
+rm -f prism_dump.sql
 

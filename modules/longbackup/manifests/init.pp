@@ -1,4 +1,5 @@
-class longbackup($bucket = '') {
+class longbackup($bucket = '',
+                 $pr_password = undefined) {
     package { 'realpath':
         ensure => present
     }
