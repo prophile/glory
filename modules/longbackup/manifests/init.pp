@@ -28,6 +28,15 @@ class longbackup($bucket = '') {
         content => template('longbackup/make.erb'),
     }
 
+    cron { "local-backup":
+        require => [File['/usr/local/bin/mc-backup-local'],
+                    User['minecraft']],
+        minute  => '26',
+        command => '/usr/local/bin/mc-backup-local',
+        user    => 'minecraft',
+        ensure  => present
+    }
+
     if $bucket != '' {
         cron { "long-backup":
             require => [File['/usr/local/bin/mcbackup'],
