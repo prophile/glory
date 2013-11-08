@@ -60,6 +60,7 @@ class minecraft(
     require => Python::Pip['mark2'],
     source  => 'file:///usr/local/lib/python2.7/dist-packages/mk2/resources/mark2.default.properties',
     mode    => '0644',
+    replace => false
   } -> Minecraft::Mark2_Prop<| |>
 
   file { "/etc/mark2/mark2.properties":
