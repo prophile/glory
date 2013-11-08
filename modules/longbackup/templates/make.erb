@@ -1,7 +1,14 @@
 #!/bin/bash
 # TODO: remove this and replace it with a save/stop saving/start saving sequence
+/etc/init.d/minecraft status
+MCRUNNING=$?
 set -e
-/etc/init.d/minecraft status && exit 1
+if [ $MCRUNNING -eq 0 ];
+  then
+    echo "Flushing and suspending MC level representation."
+    mark2 send -w "Disabled level saving" -o save-off
+    mark2 send -w "Save complete" -o save-all
+fi
 export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
 cd <%= scope.lookupvar('minecraft::homedir') %>
 date > backup-reference.txt
@@ -10,6 +17,11 @@ tar --create --file $NAME backup-reference.txt
 echo "Saving <%= path %>"
 tar --append --file $NAME <%= path %>
 <% end %>
+if [ $MCRUNNING -eq 0 ];
+  then
+    echo "Resuming level saving."
+    mark2 send -w "Enabled level saving" -o save-on
+fi
 echo "Compressing tar"
 gzip -9 $NAME
 
