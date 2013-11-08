@@ -68,7 +68,7 @@ class glory {
         'difficulty':
             value => 2;
         'motd':
-            value => 'WARNING: temporary map';
+            value => 'TEMPORARY MAP';
         'pvp':
             value => false;
     }
