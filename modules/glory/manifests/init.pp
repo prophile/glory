@@ -46,12 +46,6 @@ class glory {
 
     include glory::permissions
 
-    # Backups
-    minecraft::mark2_prop {
-        'plugin.backup.spec':
-            value => 'world;world_nether;world_the_end;banned-players.txt;plugins/WorldGuard/worlds;plugins/Nethrar/portals.yml;plugins/Essentials/spawn.yml';
-    }
-
     # Rules
 
     file { "${minecraft::homedir}/plugins/Essentials/rules.txt":
