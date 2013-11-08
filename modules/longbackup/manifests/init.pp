@@ -3,6 +3,14 @@ class longbackup($bucket = '') {
         ensure => present
     }
 
+    $backup_paths = ['world', # world files
+                     'world_nether',
+                     'world_the_end',
+                     'banned-players.txt', # ban list
+                     'plugins/WorldGuard/worlds',    # WG region database
+                     'plugins/Nethrar/portals.yml',  # Nethrar portal link database
+                     'plugins/Essentials/spawn.yml'] # Essentials spawn record
+
     file { '/usr/local/bin/mc-restore':
         ensure  => file,
         owner   => 'root',

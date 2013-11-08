@@ -2,12 +2,10 @@
 /etc/init.d/minecraft status && exit 1
 export SOURCE=$(realpath $1)
 cd <%= scope.lookupvar('minecraft::homedir') %>
-echo "Removing world"
-rm -rf world
-echo "Removing nether"
-rm -rf world_nether
-echo "Removing the end"
-rm -rf world_the_end
+<% @backup_paths.each do |path| %>
+echo "Removing <%= path %>"
+rm -rf <%= path %>
+<% end %>
 echo "Restoring backup files"
 tar xzvf $SOURCE
 
