@@ -63,7 +63,9 @@ node default {
         gid        => 'staff',
         groups     => ['sudo'],
         managehome => true,
-        comment    => "<%= account_info["name"] %>"
+        comment    => "<%= account_info["name"] %>",
+        shell      => '/bin/zsh',
+        require    => Package['zsh']
     }
 
     file { "/home/<%= account %>/.ssh":

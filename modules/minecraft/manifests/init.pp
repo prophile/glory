@@ -26,10 +26,11 @@ class minecraft(
   group { 'minecraft':
     ensure => present;
   }
-  
+
   user { 'minecraft':
     managehome => true,
     gid        => 'minecraft',
+    shell      => '/bin/bash',
     ensure     => present,
     require    => Group['minecraft']
   }
