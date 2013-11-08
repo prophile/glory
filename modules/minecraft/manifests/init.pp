@@ -39,6 +39,14 @@ class minecraft(
     ensure => present
   }
 
+  file { "${homedir}/backups":
+    ensure  => directory,
+    owner   => $user,
+    group   => $group,
+    mode    => '0755',
+    require => User['minecraft']
+  }
+
   file { "${homedir}/spigot.jar":
     ensure  => file,
     source  => 'puppet:///modules/minecraft/spigot.jar',
