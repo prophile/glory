@@ -151,6 +151,8 @@ class minecraft(
   minecraft::mark2_prop {
     'plugin.script.path':
         value => "${homedir}/scripts.txt";
+    'plugin.backup.enabled':
+        value => false;
   }
 }
 
