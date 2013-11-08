@@ -77,6 +77,8 @@ class glory {
             value => 'WARNING: temporary map';
         'pvp':
             value => false;
+        'max-players':
+            value => 15;
     }
 
     # Sudoers management
@@ -113,9 +115,9 @@ class glory {
     # Java settings
     minecraft::mark2_prop {
         'java.cli.X.ms':
-            value => '1792M';
+            value => '1536M';
         'java.cli.X.mx':
-            value => '1792M';
+            value => '1536M';
         'java.cli.XX.UseLargePages':
             value => 'true';
         'java.cli.XX.UseConcMarkSweepGC':
