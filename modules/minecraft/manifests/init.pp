@@ -86,11 +86,11 @@ class minecraft(
   } -> Minecraft::Plugin<| |>
 
   file { "${homedir}/banned-ips.txt":
-    ensure  => file,
+    ensure  => link,
     owner   => $user,
     group   => $group,
     mode    => '0664',
-    content => ''
+    target  => '/dev/null'
   }
 
   file { "${homedir}/white-list.txt":
