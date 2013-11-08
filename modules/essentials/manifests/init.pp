@@ -30,5 +30,13 @@ class essentials {
     content => template('essentials/config.yml.erb'),
     require => File["${minecraft::homedir}/plugins/Essentials"]
   }
+
+  file {"${minecraft::homedir}/plugins/Essentials/spawn.yml":
+    ensure  => file,
+    owner   => $minecraft::user,
+    group   => $minecraft::group,
+    mode    => '0644',
+    require => File["${minecraft::homedir}/plugins/Essentials"]
+  }
 }
 
