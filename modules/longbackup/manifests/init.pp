@@ -20,6 +20,14 @@ class longbackup($bucket = '') {
         require => Package['realpath']
     }
 
+    file { '/usr/local/bin/mc-backup-local':
+        ensure  => file,
+        owner   => 'root',
+        group   => 'staff',
+        mode    => '0755',
+        content => template('longbackup/make.erb'),
+    }
+
     if $bucket != '' {
         cron { "long-backup":
             require => [File['/usr/local/bin/mcbackup'],

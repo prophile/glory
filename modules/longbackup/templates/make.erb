@@ -1,0 +1,15 @@
+#!/bin/bash
+# TODO: remove this and replace it with a save/stop saving/start saving sequence
+set -e
+/etc/init.d/minecraft status && exit 1
+export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
+cd <%= scope.lookupvar('minecraft::homedir') %>
+date > backup-reference.txt
+tar --create --file $NAME backup-reference.txt
+<% @backup_paths.each do |path| %>
+echo "Saving <%= path %>"
+tar --append --file $NAME <%= path %>
+<% end %>
+echo "Compressing tar"
+gzip -9 $NAME
+
