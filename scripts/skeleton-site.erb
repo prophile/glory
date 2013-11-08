@@ -38,6 +38,8 @@ node default {
     class {'longbackup':
         bucket => '<%= settings["s3"]["bucket"] %>'
     }
+    <% else %>
+    class {'longbackup':}
     <% end %>
 
     class { 'mysql::server':
