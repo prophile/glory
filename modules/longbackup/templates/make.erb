@@ -8,6 +8,7 @@ if [ $MCRUNNING -eq 0 ];
     echo "Flushing and suspending MC level representation."
     mark2 send -w "Disabled level saving" -o save-off
     mark2 send -w "Save complete" -o save-all
+    sleep 5
 fi
 export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
 cd <%= scope.lookupvar('minecraft::homedir') %>
