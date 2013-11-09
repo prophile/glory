@@ -80,6 +80,21 @@ class longbackup($bucket = '',
         package { 'gawk':
             ensure => present
         }
+
+        exec { 'autoprovision':
+            command => '/usr/local/bin/mc-run-autoprovision',
+            creates => '/var/autoprovisioned',
+            cwd     => $minecraft::homedir,
+            user    => 'minecraft',
+            require => [File['/usr/local/bin/mc-run-autoprovision'],
+                        File['/usr/local/bin/mc-fetch-latest'],
+                        File['/usr/local/bin/mc-restore'],
+                        User['minecraft'],
+                        Class['s3cmd'],
+                        Class['prism'],
+                        Package['gawk']],
+            before  => Service['minecraft']
+        }
     } else {
         file { '/usr/local/bin/mc-run-autoprovision':
             ensure  => absent
