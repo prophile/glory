@@ -1,4 +1,6 @@
 class longbackup($bucket = '',
+                 $backups = false,
+                 $autoprovision = false,
                  $pr_password = undefined) {
     package { 'realpath':
         ensure => present
@@ -38,7 +40,7 @@ class longbackup($bucket = '',
         ensure  => present
     }
 
-    if $bucket != '' {
+    if $backups == 'true' {
         cron { "long-backup":
             require => [File['/usr/local/bin/mcbackup'],
                         User['minecraft']],

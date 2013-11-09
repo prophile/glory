@@ -35,9 +35,11 @@ node default {
     <% end %>
 
     class {'longbackup':
-    <% if settings["s3"]["backups"] %>
+    <% if settings["s3"]["backups"] or settings["s3"]["autoprovision"] %>
         bucket => '<%= settings["s3"]["bucket"] %>',
     <% end %>
+        backups => '<%= settings["s3"]["backups"] %>',
+        autoprovision => '<%= settings["s3"]["autoprovision"] %>',
         pr_password => '<%= settings['passwords']['mysql']['prism'] %>'
     }
 
