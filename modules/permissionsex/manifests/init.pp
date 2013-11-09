@@ -31,7 +31,6 @@ class permissionsex {
                 File["${minecraft::homedir}/user_permissions.txt"],
                 File["${minecraft::homedir}/global_forbid.txt"],
                 Python::Pip['pyyaml']],
-    refreshonly => true,
     subscribe => Anchor['p_update'],
     notify    => Service['minecraft'],
   }
