@@ -89,5 +89,15 @@ class glory::permissions {
         'essentials.socialspy':;
         'essentials.socialspy.others':;
     }
+    
+    # Disable some annoying auto-features, including for admins
+    permissions::global_forbid {
+        'essentials.mail':;
+        'essentials.mail.send':;
+        'essentials.mail.sendall':;
+        'essentials.afk':;
+        'essentials.afk.kickexempt':;
+        'essentials.afk.others':;
+        'essentials.afk.auto':;
+    }
 }
-
