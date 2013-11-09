@@ -67,5 +67,19 @@ class longbackup($bucket = '',
             ensure  => absent
         }
     }
+
+    if $bucket != '' {
+        file { '/usr/local/bin/mc-fetch-latest':
+            ensure  => file,
+            owner   => 'root',
+            group   => 'staff',
+            mode    => '0755',
+            content => template('longbackup/latest.erb')
+        }
+    } else {
+        file { '/usr/local/bin/mc-fetch-latest':
+            ensure  => absent
+        }
+    }
 }
 

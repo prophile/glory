@@ -1,0 +1,5 @@
+#!/bin/bash
+export TARGET=$1
+export BACKUP=$(s3cmd ls <%= @bucket %> | awk '/\/[[:digit:]]{4}(-[[:digit:]]{2}){5}\.tar\.gz$/ { print $4 }' | sort -nr | head -1)
+s3cmd get "$BACKUP" $TARGET
+
