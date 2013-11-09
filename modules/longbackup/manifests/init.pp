@@ -68,6 +68,24 @@ class longbackup($bucket = '',
         }
     }
 
+    if $autoprovision == 'true' {
+        file { '/usr/local/bin/mc-run-autoprovision':
+            ensure  => file,
+            owner   => 'root',
+            group   => 'staff',
+            mode    => '0755',
+            source  => 'puppet:///modules/longbackup/mc-run-autoprovision'
+        }
+
+        package { 'gawk':
+            ensure => present
+        }
+    } else {
+        file { '/usr/local/bin/mc-run-autoprovision':
+            ensure  => absent
+        }
+    }
+
     if $bucket != '' {
         file { '/usr/local/bin/mc-fetch-latest':
             ensure  => file,

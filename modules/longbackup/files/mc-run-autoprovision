@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+/etc/init.d/minecraft status && exit 1
+cd /tmp
+sudo -u minecraft /usr/local/bin/mc-fetch-latest seed.tar.gz
+sudo -u minecraft /usr/local/bin/mc-restore seed.tar.gz
+touch /var/autoprovisioned
