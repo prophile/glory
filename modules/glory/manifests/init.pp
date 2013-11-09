@@ -112,7 +112,7 @@ class glory {
         'java.cli.X.mx':
             value => '1536M';
         'java.cli.XX.UseLargePages':
-            value => 'true';
+            value => 'false';
         'java.cli.XX.UseConcMarkSweepGC':
             value => 'true';
     }
