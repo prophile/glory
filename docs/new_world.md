@@ -41,9 +41,9 @@ To temporarily enable nether portals in order to light them up, edit Essentials'
 
 Obviously it is a very good idea to turn the protection back on once you are done.
 
+Once the portal is open, both ends need to be protected with WorldGuard. Use the procedure in `wg_protection.md` for this purpose.
+
 Spawn Protection
 ----------------
 
-In order to prevent spawn being griefed or damaged by mobs, it is wise to protect it with WorldGuard.
-
-TODO: explain how to do this
+In order to prevent spawn being griefed or damaged by mobs, it is wise to protect it with WorldGuard. The procedure is documented in `wg_protection.md`.
