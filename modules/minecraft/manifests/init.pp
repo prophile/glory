@@ -154,6 +154,10 @@ class minecraft(
         value => "${homedir}/scripts.txt";
     'plugin.backup.enabled':
         value => false;
+    'plugin.save.warn-message':
+        value => '';
+    'plugin.save.message':
+        value => '';
   }
 }
 
