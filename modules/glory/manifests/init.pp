@@ -5,6 +5,12 @@ class glory {
         ip => '127.0.0.1' # change me to v6
     }
 
+    sysctl { 'net.ipv6.conf.all.disable_ipv6':
+        value     => '1', # No, I don't like it either, but currently it's unprotected by the firewall
+        ensure    => present,
+        permanent => yes
+    }
+
     class { 'apt':
         stage => 'pre'
     }

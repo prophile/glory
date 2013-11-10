@@ -25,3 +25,6 @@
 [submodule "modules/sudoers"]
 	path = modules/sudoers
 	url = http://github.com/jfryman/puppet-sudoers.git
+[submodule "modules/sysctl"]
+	path = modules/sysctl
+	url = http://github.com/fiddyspence/puppet-sysctl
