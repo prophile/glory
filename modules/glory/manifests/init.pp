@@ -36,6 +36,10 @@ class glory {
             ensure => present;
         'bmon':
             ensure => present;
+        'iotop':
+            ensure => present;
+        'traceroute':
+            ensure => present;
     }
 
     # Python: necessary for mark2 and other useful things
