@@ -26,7 +26,7 @@ wget --timestamping 'http://dev.bukkit.org/media/files/753/528/NoCheatPlus.jar'
 popd
 mkdir -p modules/worldborder/files
 pushd modules/worldborder/files
-wget --timestamping 'http://dev.bukkit.org/media/files/718/250/WorldBorder.jar'
+wget --timestamping 'http://dev.bukkit.org/media/files/747/177/WorldBorder.jar'
 popd
 mkdir -p modules/permissionsex/files
 pushd modules/permissionsex/files
