@@ -4,7 +4,7 @@ wget --timestamping 'http://ci.md-5.net/job/Spigot/lastStableBuild/artifact/Spig
 popd
 mkdir -p modules/essentials/files
 pushd modules/essentials/files
-wget --timestamping 'http://dev.bukkit.org/media/files/740/302/Essentials.zip'
+wget --timestamping 'http://dev.bukkit.org/media/files/748/504/Essentials.zip'
 unzip -u Essentials.zip
 popd
 mkdir -p modules/worldedit/files
