@@ -7,7 +7,7 @@ class prism($password) {
   }
 
   minecraft::plugin {"Prism":
-    source  => "puppet:///modules/prism/Prism-v1.6.6.jar",
+    source  => "puppet:///modules/prism/Prism-v1.6.8.jar",
     require => [MySQL::DB['prism_logs'],
                 File["${minecraft::homedir}/plugins/Prism/config.yml"]]
   }

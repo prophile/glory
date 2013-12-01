@@ -14,7 +14,7 @@ unzip -u worldedit-5.5.8.zip
 popd
 mkdir -p modules/prism/files
 pushd modules/prism/files
-wget --timestamping 'http://dev.bukkit.org/media/files/741/873/Prism-v1.6.6.jar'
+wget --timestamping 'http://dev.bukkit.org/media/files/751/785/Prism-v1.6.8.jar'
 popd
 mkdir -p modules/nethrar/files
 pushd modules/nethrar/files
