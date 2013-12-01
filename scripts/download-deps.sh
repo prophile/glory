@@ -22,7 +22,7 @@ wget --timestamping 'http://dev.bukkit.org/media/files/584/602/Nethrar.jar'
 popd
 mkdir -p modules/nocheatplus/files
 pushd modules/nocheatplus/files
-wget --timestamping 'http://dev.bukkit.org/media/files/740/815/NoCheatPlus.jar'
+wget --timestamping 'http://dev.bukkit.org/media/files/753/528/NoCheatPlus.jar'
 popd
 mkdir -p modules/worldborder/files
 pushd modules/worldborder/files
