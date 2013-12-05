@@ -18,7 +18,7 @@ The procedure for region protection is as follows:
   5. `/region flag <name> lighter deny` (for spawn and portals)
   6. `/region flag <name> mob-spawning deny` (for spawn only)
   7. `/region flag <name> invincible allow` (for spawn only)
-  8. `/region flag <name> greeting Now leaving spawn.` (for spawn only)
+  8. `/region flag <name> farewell Now leaving spawn.` (for spawn only)
 
 Names
 -----
