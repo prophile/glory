@@ -126,7 +126,7 @@ class minecraft(
   cron { 'backup-rotate':
     ensure  => present,
     minute  => '22',
-    command => "tmpreaper 7d ${homedir}/backups",
+    command => "/usr/sbin/tmpreaper 7d ${homedir}/backups",
     require => Package['tmpreaper']
   }
 
