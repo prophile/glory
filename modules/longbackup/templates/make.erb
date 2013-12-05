@@ -1,13 +1,14 @@
 #!/bin/bash
 # TODO: remove this and replace it with a save/stop saving/start saving sequence
+MARK2=/usr/local/bin/mark2
 /etc/init.d/minecraft status
 MCRUNNING=$?
 set -e
 if [ $MCRUNNING -eq 0 ];
   then
     echo "Flushing and suspending MC level representation."
-    mark2 send -w "Disabled level saving" -o save-off
-    mark2 send -w "Save complete" -o save-all
+    $MARK2 send -w "Disabled level saving" -o save-off
+    $MARK2 send -w "Save complete" -o save-all
     sleep 5
 fi
 export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
@@ -21,7 +22,7 @@ tar --append --file $NAME <%= path %>
 if [ $MCRUNNING -eq 0 ];
   then
     echo "Resuming level saving."
-    mark2 send -w "Enabled level saving" -o save-on
+    $MARK2 send -w "Enabled level saving" -o save-on
 fi
 echo "Dumping the Prism database"
 mysqldump --add-drop-table --create-options --password=<%= @pr_password %> --user=prism prism_logs > prism_dump.sql
