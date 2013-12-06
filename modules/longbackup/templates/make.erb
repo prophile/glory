@@ -12,6 +12,7 @@ if [ $MCRUNNING -eq 0 ];
     sleep 5
 fi
 export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
+echo "Creating backup $NAME"
 cd <%= scope.lookupvar('minecraft::homedir') %>
 date > backup-reference.txt
 tar --create --file $NAME backup-reference.txt
