@@ -98,10 +98,13 @@ class glory {
 
     include essentials
     include worldedit
-    include nethrar
     include permissionsex
     include nocheatplus
     include worldguard
+
+    class { 'nethrar':
+        ensure => absent
+    }
 
     class { 'worldborder':
         radius => 1000
