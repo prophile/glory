@@ -77,7 +77,7 @@ class glory {
         'difficulty':
             value => 2;
         'motd':
-            value => 'TEMPORARY MAP';
+            value => 'Prepare for unforeseen consequences';
         'pvp':
             value => false;
         'max-players':
