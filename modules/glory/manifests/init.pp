@@ -121,9 +121,9 @@ class glory {
     # Java settings
     minecraft::mark2_prop {
         'java.cli.X.ms':
-            value => '1536M';
+            value => '1280M';
         'java.cli.X.mx':
-            value => '1536M';
+            value => '1280M';
         'java.cli.XX.UseLargePages':
             value => 'false';
         'java.cli.XX.UseConcMarkSweepGC':
