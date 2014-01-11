@@ -26,8 +26,6 @@ Rule 1 notwithstanding, your basic tool against those who are damaging the serve
 * `/ban <player> <message>` will ban a user from the server with a given message. Please explain the reason for their ban in the message, this is for staff reference as much as anything else.
 * `/unban <player>` will remove a ban from a player and allow them once again to connect to the server.
 
-In some Minecraft servers, there is the option of banning players by IP address rather than username. This is disabled here, but if you do find a way to circumvent this, be warned that it is a **very bad idea**. Due to the way the server is set up, every single user will appear to come from the same IP address, and banning that IP will make it impossible for anyone to connect to the server until an admin can fix it at the console.
-
 Monitoring
 ----------
 
