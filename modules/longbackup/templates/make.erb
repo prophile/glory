@@ -16,6 +16,9 @@ echo "Creating backup $NAME"
 cd <%= scope.lookupvar('minecraft::homedir') %>
 date > backup-reference.txt
 tar --create --file $NAME backup-reference.txt
+echo "Dumping the Prism database"
+mysqldump --add-drop-table --create-options --password=<%= @pr_password %> --user=prism prism_logs > prism_dump.sql
+tar --append --file $NAME prism_dump.sql
 <% @backup_paths.each do |path| %>
 echo "Saving <%= path %>"
 tar --append --file $NAME <%= path %>
@@ -25,9 +28,6 @@ if [ $MCRUNNING -eq 0 ];
     echo "Resuming level saving."
     $MARK2 send -w "Enabled level saving" -o save-on
 fi
-echo "Dumping the Prism database"
-mysqldump --add-drop-table --create-options --password=<%= @pr_password %> --user=prism prism_logs > prism_dump.sql
-tar --append --file $NAME prism_dump.sql
 echo "Compressing tar"
 gzip -9 $NAME
 rm -f prism_dump.sql
