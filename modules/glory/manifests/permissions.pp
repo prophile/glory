@@ -12,6 +12,9 @@ class glory::permissions {
         'essentials.kick':;
         'essentials.kick.notify':;
         'essentials.ban':;
+        # IP bans
+        'essentials.banip':;
+        'essentials.unbanip':;
         # Announcements
         'essentials.broadcast':;
         'bukkit.command.say':;
