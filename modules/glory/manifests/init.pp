@@ -107,7 +107,8 @@ class glory {
     }
 
     class { 'worldborder':
-        radius => 1000
+        radius => 1000,
+        nether_radius => 200,
     }
 
     # Query protocol

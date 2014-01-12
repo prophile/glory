@@ -1,4 +1,5 @@
-class worldborder($radius) {
+class worldborder($radius,
+                  $nether_radius) {
   file { "${minecraft::homedir}/plugins/WorldBorder":
     ensure  => directory,
     owner   => $minecraft::user,
