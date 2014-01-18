@@ -37,4 +37,14 @@ pushd modules/worldguard/files
 wget --timestamping 'http://dev.bukkit.org/media/files/719/258/worldguard-5.8.zip'
 unzip -u worldguard-5.8.zip
 popd
+mkdir -p modules/maprender/files
+pushd modules/maprender/files
+if [ -a overviewer ]
+  then
+    cd overviewer
+    git pull --ff-only
+  else
+    git clone https://github.com/overviewer/Minecraft-Overviewer overviewer
+fi
+popd
 

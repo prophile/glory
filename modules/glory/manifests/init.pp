@@ -108,6 +108,9 @@ class glory {
         radius => 1000
     }
 
+    # Map rendering
+    include maprender
+
     # Query protocol
     minecraft::server_prop {
         'enable-query':
