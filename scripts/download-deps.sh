@@ -4,7 +4,7 @@ wget --timestamping 'http://ci.md-5.net/job/Spigot/lastSuccessfulBuild/artifact/
 popd
 mkdir -p modules/essentials/files
 pushd modules/essentials/files
-wget --timestamping 'http://dev.bukkit.org/media/files/748/504/Essentials.zip'
+wget --timestamping 'http://dev.bukkit.org/media/files/758/474/Essentials.zip'
 unzip -u Essentials.zip
 popd
 mkdir -p modules/worldedit/files
@@ -22,7 +22,7 @@ wget --timestamping 'http://dev.bukkit.org/media/files/753/528/NoCheatPlus.jar'
 popd
 mkdir -p modules/worldborder/files
 pushd modules/worldborder/files
-wget --timestamping 'http://dev.bukkit.org/media/files/747/177/WorldBorder.jar'
+wget --timestamping 'http://dev.bukkit.org/media/files/761/625/WorldBorder.jar'
 popd
 mkdir -p modules/permissionsex/files
 pushd modules/permissionsex/files
