@@ -42,6 +42,8 @@ class glory {
             ensure => present;
         'traceroute':
             ensure => present;
+        'mailutils':
+            ensure => present;
     }
 
     # Python: necessary for mark2 and other useful things
