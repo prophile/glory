@@ -145,5 +145,8 @@ class glory {
     class { 'glory::redirect':
         stage => 'website'
     }
+    class { 'website':
+        stage => 'website'
+    }
 }
 
