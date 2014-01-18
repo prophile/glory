@@ -34,6 +34,7 @@ class longbackup($bucket = '',
         require => [File['/usr/local/bin/mc-backup-local'],
                     User['minecraft']],
         minute  => '26',
+        hour    => [7, 19],
         command => '/usr/local/bin/mc-backup-local',
         user    => 'minecraft',
         ensure  => present
@@ -43,8 +44,8 @@ class longbackup($bucket = '',
         cron { "long-backup":
             require => [File['/usr/local/bin/mcbackup'],
                         User['minecraft']],
-            minute  => '8',
-            hour    => '4',
+            minute  => '43',
+            hour    => '19',
             command => '/usr/local/bin/mcbackup',
             user    => 'minecraft',
             ensure  => present

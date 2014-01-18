@@ -6,10 +6,11 @@ MCRUNNING=$?
 set -e
 if [ $MCRUNNING -eq 0 ];
   then
-    echo "Flushing and suspending MC level representation."
-    $MARK2 send -w "Disabled level saving" -o save-off
-    $MARK2 send -w "Save complete" -o save-all
-    sleep 5
+    echo "Warning about imminent shutdown."
+    $MARK2 send say Server is going down for reboot in 1 minute.
+    sleep 60
+    echo "Shutting down Minecraft server."
+    /etc/init.d/minecraft stop
 fi
 export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
 echo "Creating backup $NAME"
@@ -25,8 +26,8 @@ tar --append --file $NAME <%= path %>
 <% end %>
 if [ $MCRUNNING -eq 0 ];
   then
-    echo "Resuming level saving."
-    $MARK2 send -w "Enabled level saving" -o save-on
+    echo "Resuming server."
+    /etc/init.d/minecraft start
 fi
 echo "Compressing tar"
 gzip -9 $NAME
