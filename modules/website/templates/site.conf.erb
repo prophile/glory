@@ -22,5 +22,10 @@ server {
 
     fastcgi_param SCRIPT_FILENAME /srv/web$fastcgi_script_name;
   }
+
+  location /map/ {
+    alias /home/overviewer/render/;
+    index index.html;
+  }
 }
 
