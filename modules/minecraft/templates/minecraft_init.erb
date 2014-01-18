@@ -27,7 +27,7 @@ as_user() {
 }
 
 mc_start() {
-  as_user "cd $MCPATH && mark2 start"
+  as_user "cd $MCPATH && timeout 20s mark2 start"
 }
 
 mc_stop() {
