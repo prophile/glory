@@ -39,16 +39,16 @@ class glory::permissions {
         # Fire handling via WorldGuard
         'worldguard.fire-toggle.*':;
         # Vanish No Packet
-        'vanish.vanish';
-        'vanish.see';
-        'vanish.statusupdates';
-        'vanish.list';
-        'vanish.silentchests';
-        'vanish.hooks.essentials.hide';
-        'vanish.nofollow';
-        'vanish.nointeract';
-        'vanish.nohunger';
-        'vanish.preventdamage';
+        'vanish.vanish':;
+        'vanish.see':;
+        'vanish.statusupdates':;
+        'vanish.list':;
+        'vanish.silentchests':;
+        'vanish.hooks.essentials.hide':;
+        'vanish.nofollow':;
+        'vanish.nointeract':;
+        'vanish.nohunger':;
+        'vanish.preventdamage':;
     }
 
     permissions::user_permission {
