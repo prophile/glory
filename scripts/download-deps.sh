@@ -39,6 +39,7 @@ unzip -u worldguard-5.8.zip
 popd
 mkdir -p modules/maprender/files
 pushd modules/maprender/files
+wget --timestamping https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/1.7.4.jar
 if [ -a overviewer ]
   then
     cd overviewer
