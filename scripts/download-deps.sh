@@ -16,10 +16,6 @@ mkdir -p modules/prism/files
 pushd modules/prism/files
 wget --timestamping 'http://dev.bukkit.org/media/files/751/785/Prism-v1.6.8.jar'
 popd
-mkdir -p modules/nethrar/files
-pushd modules/nethrar/files
-wget --timestamping 'http://dev.bukkit.org/media/files/584/602/Nethrar.jar'
-popd
 mkdir -p modules/nocheatplus/files
 pushd modules/nocheatplus/files
 wget --timestamping 'http://dev.bukkit.org/media/files/753/528/NoCheatPlus.jar'

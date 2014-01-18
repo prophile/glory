@@ -11,7 +11,6 @@ class longbackup($bucket = '',
                      'world_the_end',
                      'banned-players.txt', # ban list
                      'plugins/WorldGuard/worlds',    # WG region database
-                     #'plugins/Nethrar/portals.yml',  # Nethrar portal link database
                      'plugins/Essentials/spawn.yml'] # Essentials spawn record
 
     file { '/usr/local/bin/mc-restore':
