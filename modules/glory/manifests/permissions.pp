@@ -12,6 +12,9 @@ class glory::permissions {
         'essentials.kick':;
         'essentials.kick.notify':;
         'essentials.ban':;
+        # IP bans
+        'essentials.banip':;
+        'essentials.unbanip':;
         # Announcements
         'essentials.broadcast':;
         'bukkit.command.say':;
@@ -19,8 +22,6 @@ class glory::permissions {
         'essentials.clearinventory':;
         'essentials.clearinventory.others':;
         'essentials.invsee':;
-        # Vanish
-        'essentials.vanish':;
         # TP access
         'essentials.tp':;
         'essentials.tp.others':;
@@ -37,6 +38,17 @@ class glory::permissions {
         'nocheatplus.shortcut.safeadmin':;
         # Fire handling via WorldGuard
         'worldguard.fire-toggle.*':;
+        # Vanish No Packet
+        'vanish.vanish':;
+        'vanish.see':;
+        'vanish.statusupdates':;
+        'vanish.list':;
+        'vanish.silentchests':;
+        'vanish.hooks.essentials.hide':;
+        'vanish.nofollow':;
+        'vanish.nointeract':;
+        'vanish.nohunger':;
+        'vanish.preventdamage':;
     }
 
     permissions::user_permission {

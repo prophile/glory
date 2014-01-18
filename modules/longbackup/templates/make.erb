@@ -6,28 +6,29 @@ MCRUNNING=$?
 set -e
 if [ $MCRUNNING -eq 0 ];
   then
-    echo "Flushing and suspending MC level representation."
-    $MARK2 send -w "Disabled level saving" -o save-off
-    $MARK2 send -w "Save complete" -o save-all
-    sleep 5
+    echo "Warning about imminent shutdown."
+    $MARK2 send say Server is going down for reboot in 1 minute.
+    sleep 60
+    echo "Shutting down Minecraft server."
+    /etc/init.d/minecraft stop
 fi
 export NAME=backups/$(date --universal +%F-%H-%M-%S.tar)
 echo "Creating backup $NAME"
 cd <%= scope.lookupvar('minecraft::homedir') %>
 date > backup-reference.txt
 tar --create --file $NAME backup-reference.txt
+echo "Dumping the Prism database"
+mysqldump --add-drop-table --create-options --password=<%= @pr_password %> --user=prism prism_logs > prism_dump.sql
+tar --append --file $NAME prism_dump.sql
 <% @backup_paths.each do |path| %>
 echo "Saving <%= path %>"
 tar --append --file $NAME <%= path %>
 <% end %>
 if [ $MCRUNNING -eq 0 ];
   then
-    echo "Resuming level saving."
-    $MARK2 send -w "Enabled level saving" -o save-on
+    echo "Resuming server."
+    /etc/init.d/minecraft start
 fi
-echo "Dumping the Prism database"
-mysqldump --add-drop-table --create-options --password=<%= @pr_password %> --user=prism prism_logs > prism_dump.sql
-tar --append --file $NAME prism_dump.sql
 echo "Compressing tar"
 gzip -9 $NAME
 rm -f prism_dump.sql

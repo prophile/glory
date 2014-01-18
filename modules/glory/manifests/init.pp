@@ -1,7 +1,9 @@
 class glory {
-    stage { 'pre': before => Stage['main'] }
+    stage { 'pre': before => [Stage['website'], Stage['main']] }
+    stage { 'website': before => Stage['main'] } # Ordering here is due to the mark2 hang, temporary
 
-    host { 'm.neffy.me':
+    host { ['m.neffy.me',
+            'minecraft.nfreader.net']:
         ip => '127.0.0.1' # change me to v6
     }
 
@@ -39,6 +41,8 @@ class glory {
         'iotop':
             ensure => present;
         'traceroute':
+            ensure => present;
+        'mailutils':
             ensure => present;
     }
 
@@ -101,15 +105,15 @@ class glory {
     include permissionsex
     include nocheatplus
     include worldguard
-
-    class { 'nethrar':
-        ensure => absent
-    }
+    include vanishnopacket
 
     class { 'worldborder':
         radius => 2000,
         nether_radius => 500,
     }
+
+    # Map rendering
+    include maprender
 
     # Query protocol
     minecraft::server_prop {
@@ -142,7 +146,10 @@ class glory {
 
     include glory::firewall
     class { 'glory::redirect':
-        stage => 'pre'
+        stage => 'website'
+    }
+    class { 'website':
+        stage => 'website'
     }
 }
 

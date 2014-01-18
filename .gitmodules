@@ -28,3 +28,6 @@
 [submodule "modules/sysctl"]
 	path = modules/sysctl
 	url = http://github.com/fiddyspence/puppet-sysctl
+[submodule "modules/website/files"]
+	path = modules/website/files
+	url = http://github.com/nfreader/minecraft.nfreader.net

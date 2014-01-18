@@ -19,9 +19,11 @@ users = {}
 # General users group
 groups['default'] = {'default': True, 'permissions': fperms + uperms}
 # Mods group
-groups['mods'] = {'permissions': fperms + mperms}
+groups['mods'] = {'permissions': fperms + mperms,
+                  'prefix': '&1'}
 # Admins group
-groups['admins'] = {'permissions': fperms + ['*']}
+groups['admins'] = {'permissions': fperms + ['*'],
+                    'prefix': '&4'}
 
 for adm in admins:
     users[adm] = {'group': ['admins']}
