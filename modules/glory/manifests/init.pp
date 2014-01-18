@@ -102,6 +102,7 @@ class glory {
     include permissionsex
     include nocheatplus
     include worldguard
+    include vanishnopacket
 
     class { 'worldborder':
         radius => 1000
