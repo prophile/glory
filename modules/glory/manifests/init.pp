@@ -2,7 +2,8 @@ class glory {
     stage { 'pre': before => [Stage['website'], Stage['main']] }
     stage { 'website': before => Stage['main'] } # Ordering here is due to the mark2 hang, temporary
 
-    host { 'm.neffy.me':
+    host { ['m.neffy.me',
+            'minecraft.nfreader.net']:
         ip => '127.0.0.1' # change me to v6
     }
 
