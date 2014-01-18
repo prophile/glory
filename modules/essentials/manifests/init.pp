@@ -14,6 +14,11 @@ class essentials {
     require => Minecraft::Plugin["Essentials"]
   }
 
+  minecraft::plugin {"EssentialChat":
+    source  => "puppet:///modules/essentials/EssentialsChat.jar",
+    require => Minecraft::Plugin["Essentials"]
+  }
+
   file {"${minecraft::homedir}/plugins/Essentials":
     ensure  => directory,
     owner   => $minecraft::user,
