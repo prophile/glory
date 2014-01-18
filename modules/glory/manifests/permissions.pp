@@ -22,8 +22,6 @@ class glory::permissions {
         'essentials.clearinventory':;
         'essentials.clearinventory.others':;
         'essentials.invsee':;
-        # Vanish
-        'essentials.vanish':;
         # TP access
         'essentials.tp':;
         'essentials.tp.others':;
