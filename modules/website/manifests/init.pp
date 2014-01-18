@@ -1,8 +1,8 @@
 class website {
     $web_root = '/srv/web'
 
-    package { 'nginx':
-        ensure => present
+    package { ['nginx', 'php5-fpm']:
+        ensure => latest
     }
 
     file { $web_root:
@@ -20,7 +20,9 @@ class website {
         group    => 'root',
         mode     => '0644',
         content  => template('website/site.conf.erb'),
-        require  => [Package['nginx'], File[$web_root]],
+        require  => [Package['nginx'],
+                     File[$web_root],
+                     Package['php5-fpm']],
         notify   => Service['nginx']
     }
 
