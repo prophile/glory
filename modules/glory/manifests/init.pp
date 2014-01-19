@@ -133,6 +133,8 @@ class glory {
             value => 'false';
         'java.cli.XX.UseConcMarkSweepGC':
             value => 'true';
+        'java.cli.XX.MaxPermSize':
+            value => '128M';
     }
 
     # Server icon
