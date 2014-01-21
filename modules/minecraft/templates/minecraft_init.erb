@@ -28,11 +28,11 @@ as_user() {
 }
 
 mc_start() {
-  as_user "cd $MCPATH && timeout 20s $MARK2 start"
+  as_user "cd $MCPATH ; timeout 20s $MARK2 start"
 }
 
 mc_stop() {
-  as_user "cd $MCPATH && $MARK2 stop"
+  as_user "cd $MCPATH ; $MARK2 send save-all ; sleep 10 ; $MARK2 stop"
 }
 
 #Start-Stop here
