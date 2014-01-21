@@ -16,6 +16,7 @@
 #Settings
 USERNAME="<%= @user %>"
 MCPATH="<%= @homedir %>"
+MARK2=/usr/local/bin/mark2
 
 ME=`whoami`
 as_user() {
@@ -27,11 +28,11 @@ as_user() {
 }
 
 mc_start() {
-  as_user "cd $MCPATH && timeout 20s mark2 start"
+  as_user "cd $MCPATH && timeout 20s $MARK2 start"
 }
 
 mc_stop() {
-  as_user "cd $MCPATH && mark2 stop"
+  as_user "cd $MCPATH && $MARK2 stop"
 }
 
 #Start-Stop here
