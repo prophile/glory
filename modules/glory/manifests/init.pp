@@ -85,7 +85,7 @@ class glory {
         'pvp':
             value => false;
         'max-players':
-            value => 15;
+            value => 12;
     }
 
     # Sudoers management
@@ -126,9 +126,9 @@ class glory {
     # Java settings
     minecraft::mark2_prop {
         'java.cli.X.ms':
-            value => '1280M';
+            value => '1024M';
         'java.cli.X.mx':
-            value => '1280M';
+            value => '1024M';
         'java.cli.XX.UseLargePages':
             value => 'false';
         'java.cli.XX.UseConcMarkSweepGC':
