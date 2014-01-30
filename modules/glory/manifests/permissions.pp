@@ -102,7 +102,7 @@ class glory::permissions {
         'essentials.socialspy':;
         'essentials.socialspy.others':;
     }
-    
+
     # Disable some annoying auto-features, including for admins
     permissions::global_forbid {
         'essentials.mail':;
@@ -112,5 +112,10 @@ class glory::permissions {
         'essentials.afk.kickexempt':;
         'essentials.afk.others':;
         'essentials.afk.auto':;
+    }
+
+    # Disable the cheap VNP effects
+    permissions::global_forbid {
+        'vanish.effects.*':;
     }
 }
