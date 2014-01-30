@@ -20,7 +20,7 @@ users = {}
 groups['default'] = {'default': True, 'permissions': fperms + uperms}
 # Mods group
 groups['mods'] = {'permissions': fperms + mperms,
-                  'prefix': '&1'}
+                  'prefix': '&2'}
 # Admins group
 groups['admins'] = {'permissions': fperms + ['*'],
                     'prefix': '&4'}
