@@ -76,6 +76,7 @@ class glory::permissions {
         'essentials.home':;
         'essentials.sethome':;
         'essentials.back':;
+        'essentials.spawn':;
     }
 
     # Log everyone in prism
