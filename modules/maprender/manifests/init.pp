@@ -23,6 +23,7 @@ class maprender {
         source => 'puppet:///modules/maprender/overviewer',
         purge => false,
         recurse => true,
+        ignore  => ['.git', 'docs'],
         require => User['overviewer']
     }
 

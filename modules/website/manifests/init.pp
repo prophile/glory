@@ -11,7 +11,8 @@ class website {
         group    => 'root',
         source   => 'puppet:///modules/website',
         purge    => true,
-        recurse  => true
+        recurse  => true,
+        ignore   => ['.git']
     }
 
     file { '/etc/nginx/conf.d/website.conf':
