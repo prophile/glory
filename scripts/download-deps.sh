@@ -18,7 +18,7 @@ wget --timestamping 'http://dev.bukkit.org/media/files/751/785/Prism-v1.6.8.jar'
 popd
 mkdir -p modules/nocheatplus/files
 pushd modules/nocheatplus/files
-wget --timestamping 'http://dev.bukkit.org/media/files/753/528/NoCheatPlus.jar'
+wget --timestamping 'http://dev.bukkit.org/media/files/774/328/NoCheatPlus.jar'
 popd
 mkdir -p modules/worldborder/files
 pushd modules/worldborder/files
