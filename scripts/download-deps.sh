@@ -30,7 +30,7 @@ wget --timestamping 'http://dev.bukkit.org/media/files/742/103/PermissionsEx.jar
 popd
 mkdir -p modules/vanishnopacket/files
 pushd modules/vanishnopacket/files
-wget --timestamping 'http://dev.bukkit.org/media/files/757/603/VanishNoPacket.jar'
+wget --timestamping 'http://dev.bukkit.org/media/files/769/601/VanishNoPacket.jar'
 popd
 mkdir -p modules/worldguard/files
 pushd modules/worldguard/files
